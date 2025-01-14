@@ -1,0 +1,5 @@
+2025-01-14 17:26:41,302 - INFO - book added successfully
+2025-01-14 17:26:48,346 - ERROR - book borrowed fail
+2025-01-14 17:26:48,346 - ERROR - book borrowed fail
+2025-01-14 17:26:48,382 - INFO - book returned successfully
+2025-01-14 17:26:55,383 - ERROR - book borrowed fail
