@@ -1,5 +1,165 @@
-2025-01-14 17:26:41,302 - INFO - book added successfully
-2025-01-14 17:26:48,346 - ERROR - book borrowed fail
-2025-01-14 17:26:48,346 - ERROR - book borrowed fail
-2025-01-14 17:26:48,382 - INFO - book returned successfully
-2025-01-14 17:26:55,383 - ERROR - book borrowed fail
+
+2025-01-16 14:28:51,753 - INFO - book added successfully
+2025-01-16 14:28:54,797 - INFO - book borrowed successfully
+2025-01-16 14:28:54,797 - ERROR - book borrowed fail
+2025-01-16 14:28:54,834 - INFO - book borrowed successfully
+2025-01-16 14:28:54,841 - INFO - book returned successfully
+2025-01-16 14:28:57,841 - ERROR - book borrowed fail
+2025-01-16 14:30:10,459 - INFO - book added successfully
+2025-01-16 14:30:13,508 - INFO - book borrowed successfully
+2025-01-16 14:30:16,509 - ERROR - book borrowed fail
+2025-01-16 14:30:19,546 - INFO - book borrowed successfully
+2025-01-16 14:30:19,553 - INFO - book returned successfully
+2025-01-16 14:30:22,554 - ERROR - book borrowed fail
+2025-01-16 14:33:34,792 - INFO - book added successfully
+2025-01-16 14:33:37,842 - INFO - book borrowed successfully
+2025-01-16 14:33:40,843 - ERROR - book borrowed fail
+2025-01-16 14:33:44,894 - INFO - book borrowed successfully
+2025-01-16 14:33:44,900 - INFO - book returned successfully
+2025-01-16 14:33:47,901 - ERROR - book borrowed fail
+2025-01-16 14:34:19,406 - INFO - book added successfully
+2025-01-16 14:34:22,449 - INFO - book borrowed successfully
+2025-01-16 14:34:25,450 - ERROR - book borrowed fail
+2025-01-16 14:34:29,501 - INFO - book borrowed successfully
+2025-01-16 14:34:29,508 - INFO - book returned successfully
+2025-01-16 14:34:32,510 - ERROR - book borrowed fail
+2025-01-16 14:35:02,209 - INFO - book added successfully
+2025-01-16 14:35:05,254 - INFO - book borrowed successfully
+2025-01-16 14:35:08,256 - ERROR - book borrowed fail
+2025-01-16 14:35:12,301 - INFO - book borrowed successfully
+2025-01-16 14:35:12,301 - INFO - book returned successfully
+2025-01-16 14:35:15,301 - ERROR - book borrowed fail
+2025-01-16 14:39:44,327 - INFO - logged in successfully
+2025-01-16 14:43:35,514 - INFO - logged in successfully
+2025-01-16 14:47:03,057 - INFO - logged in successfully
+2025-01-16 15:11:39,298 - INFO - logged in successfully
+2025-01-16 15:11:45,258 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:11:47,544 - INFO - Search book 'ab' by name completed  successfully
+2025-01-16 15:11:49,564 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:11:49,926 - INFO - Search book 'aw' by name completed  successfully
+2025-01-16 15:11:50,866 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:11:51,193 - INFO - Search book 'aq' by name completed  successfully
+2025-01-16 15:11:52,519 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:11:55,774 - INFO - Search book 'A' by name completed  successfully
+2025-01-16 15:11:57,515 - INFO - Search book 'A' by name completed  successfully
+2025-01-16 15:11:57,718 - INFO - Search book 'Ab' by name completed  successfully
+2025-01-16 15:11:59,062 - INFO - Search book 'A' by name completed  successfully
+2025-01-16 15:11:59,542 - INFO - Search book 'Aq' by name completed  successfully
+2025-01-16 15:12:00,368 - INFO - Search book 'A' by name completed  successfully
+2025-01-16 15:12:12,612 - INFO - Search book 's' by name completed  successfully
+2025-01-16 15:12:27,176 - INFO - Search book 'sw' by name completed  successfully
+2025-01-16 15:12:28,222 - INFO - Search book 's' by name completed  successfully
+2025-01-16 15:12:28,523 - INFO - Search book 'sw' by name completed  successfully
+2025-01-16 15:12:29,004 - INFO - Search book 's' by name completed  successfully
+2025-01-16 15:12:29,239 - INFO - Search book 'se' by name completed  successfully
+2025-01-16 15:12:37,108 - INFO - Search book 'se' by name completed  successfully
+2025-01-16 15:12:37,111 - INFO - Search book 'se' by name completed  successfully
+2025-01-16 15:12:37,114 - INFO - Search book 'se' by name completed  successfully
+2025-01-16 15:13:10,126 - INFO - book added successfully
+2025-01-16 15:13:13,175 - INFO - book borrowed successfully
+2025-01-16 15:13:16,177 - ERROR - book borrowed fail
+2025-01-16 15:13:20,221 - INFO - book borrowed successfully
+2025-01-16 15:13:20,227 - INFO - book returned successfully
+2025-01-16 15:13:23,229 - ERROR - book borrowed fail
+2025-01-16 15:16:28,329 - INFO - logged in successfully
+2025-01-16 15:16:35,181 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:16:48,778 - INFO - Search book 'at' by name completed  successfully
+2025-01-16 15:16:52,232 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:17:16,012 - INFO - Search book '1' by name completed  successfully
+2025-01-16 15:20:14,989 - INFO - logged in successfully
+2025-01-16 15:20:20,488 - INFO - Search book '1' by name completed  successfully
+2025-01-16 15:20:44,880 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:20:54,362 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:20:54,382 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:20:54,394 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:26:17,252 - INFO - logged in successfully
+2025-01-16 15:26:23,255 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:26:31,621 - INFO - Search book 'ab' by name completed  successfully
+2025-01-16 15:26:32,999 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:26:34,050 - INFO - Search book '1' by name completed  successfully
+2025-01-16 15:35:24,465 - INFO - logged in successfully
+2025-01-16 15:35:29,710 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:35:35,773 - INFO - Search book 'as' by name completed  successfully
+2025-01-16 15:35:37,237 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:35:37,460 - INFO - Search book 'ab' by name completed  successfully
+2025-01-16 15:37:13,752 - INFO - logged in successfully
+2025-01-16 15:37:17,865 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 15:37:19,468 - INFO - Search book 'av' by name completed  successfully
+2025-01-16 16:01:36,997 - INFO - book added successfully
+2025-01-16 16:01:39,051 - INFO - book removed successfully
+2025-01-16 16:03:42,794 - INFO - book added successfully
+2025-01-16 16:03:44,820 - INFO - book removed successfully
+2025-01-16 16:04:40,757 - INFO - book added successfully
+2025-01-16 16:04:42,777 - INFO - book removed successfully
+2025-01-16 16:04:55,662 - INFO - book added successfully
+2025-01-16 16:04:57,676 - INFO - book removed successfully
+2025-01-16 16:05:15,620 - INFO - book added successfully
+2025-01-16 16:05:17,632 - INFO - book removed successfully
+2025-01-16 16:13:18,318 - INFO - book added successfully
+2025-01-16 16:13:20,338 - INFO - book removed successfully
+2025-01-16 16:13:52,779 - INFO - book added successfully
+2025-01-16 16:17:56,664 - INFO - book added successfully
+2025-01-16 16:18:29,301 - INFO - book added successfully
+2025-01-16 16:18:34,326 - INFO - book removed successfully
+2025-01-16 16:20:38,241 - INFO - book added successfully
+2025-01-16 16:20:43,269 - INFO - book removed successfully
+2025-01-16 16:21:05,309 - INFO - book added successfully
+2025-01-16 16:21:10,322 - INFO - book removed successfully
+2025-01-16 16:23:24,031 - INFO - book added successfully
+2025-01-16 16:23:29,040 - INFO - book removed successfully
+2025-01-16 16:30:15,779 - INFO - book added successfully
+2025-01-16 16:30:20,804 - INFO - book removed successfully
+2025-01-16 16:31:31,594 - INFO - book added successfully
+2025-01-16 16:31:36,596 - ERROR - book borrowed fail
+2025-01-16 16:31:36,606 - INFO - book removed successfully
+2025-01-16 16:32:16,941 - INFO - book added successfully
+2025-01-16 16:32:21,944 - ERROR - book borrowed fail
+2025-01-16 16:32:21,956 - INFO - book removed successfully
+2025-01-16 16:35:44,395 - INFO - book added successfully
+2025-01-16 16:35:49,405 - INFO - book borrowed successfully
+2025-01-16 16:35:49,412 - INFO - book removed successfully
+2025-01-16 16:36:36,882 - INFO - book added successfully
+2025-01-16 16:36:41,891 - INFO - book returned successfully
+2025-01-16 16:36:41,898 - INFO - book removed successfully
+2025-01-16 16:37:27,604 - INFO - logged in successfully
+2025-01-16 16:37:53,677 - INFO - book added successfully
+2025-01-16 16:38:16,180 - INFO - book removed successfully
+2025-01-16 16:38:42,617 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 16:38:44,421 - INFO - Search book 'am' by name completed  successfully
+2025-01-16 16:38:44,794 - INFO - Search book 'ami' by name completed  successfully
+2025-01-16 16:38:45,903 - INFO - Search book 'am' by name completed  successfully
+2025-01-16 16:38:46,058 - INFO - Search book 'a' by name completed  successfully
+2025-01-16 17:23:47,361 - INFO - logged in successfully
+2025-01-16 17:24:44,446 - INFO - book added successfully
+2025-01-16 17:25:16,117 - INFO - book removed successfully
+2025-01-16 17:32:12,452 - INFO - logged in successfully
+2025-01-16 17:32:34,915 - INFO - book added successfully
+2025-01-16 17:33:27,587 - INFO - book borrowed successfully
+2025-01-16 17:34:19,356 - ERROR - book borrowed fail
+2025-01-16 17:40:44,496 - INFO - logged in successfully
+2025-01-16 17:41:13,858 - INFO - logged in successfully
+2025-01-16 17:41:39,470 - INFO - book added successfully
+2025-01-16 17:42:59,153 - INFO - logged in successfully
+2025-01-16 17:43:39,249 - INFO - book borrowed successfully
+2025-01-16 17:44:15,757 - ERROR - book borrowed fail
+2025-01-16 17:45:45,429 - INFO - logged in successfully
+2025-01-16 17:49:33,779 - INFO - logged in successfully
+2025-01-16 17:50:36,272 - INFO - logged in successfully
+2025-01-16 18:00:48,289 - INFO - logged in successfully
+2025-01-16 18:01:16,569 - ERROR - book returned fail
+2025-01-16 18:01:47,625 - INFO - book added successfully
+2025-01-16 18:02:20,270 - INFO - book borrowed successfully
+2025-01-16 18:03:04,393 - ERROR - book borrowed fail
+2025-01-16 18:03:24,636 - INFO - book borrowed successfully
+2025-01-16 18:03:24,641 - INFO - book returned successfully
+2025-01-16 18:14:03,707 - INFO - logged in successfully
+2025-01-16 18:20:32,137 - INFO - logged in successfully
+2025-01-16 18:23:54,899 - INFO - logged in successfully
+2025-01-16 18:25:28,658 - INFO - logged in successfully
+2025-01-16 18:26:20,739 - INFO - book added successfully
+2025-01-16 18:27:03,031 - INFO - book borrowed successfully
+2025-01-16 18:33:04,834 - INFO - logged in successfully
+2025-01-16 18:33:19,974 - INFO - book added successfully
+2025-01-16 18:33:32,049 - INFO - book removed successfully
+2025-01-16 18:41:56,172 - ERROR - logged in fail
+2025-01-16 18:42:03,642 - INFO - logged in successfully

@@ -3,16 +3,16 @@ from typing import List
 from LogManager import LogManager
 from Book import Book
 
+log_manager = LogManager()
+class SearchStrategy(ABC):
 
-class Strategy(ABC):
-
-    @abstractmethod
+    #@abstractmethod
     def search(self, books: List[Book],query : str) -> List[Book] :
        pass
 
 
-class SearchByTitle(Strategy):
-    @LogManager.log_action(log_manager= LogManager, action_name= lambda books, query:f"Search book '{query}' by name completed ")
+class SearchByTitle(SearchStrategy):
+    @log_manager.log_action(lambda query:f"Search book '{query}' by name completed ")
     def search(self, books: List[Book],query : str) -> List[Book]:
         if not query.strip():
             print("Warning: Empty query provided for title search.")
@@ -22,36 +22,35 @@ class SearchByTitle(Strategy):
         return [book for book in books if query.lower() in book.title.lower()]
 
 
-class SearchByAuthor(Strategy):
-    @LogManager.log_action(log_manager= LogManager, action_name= lambda books, query:f"Search book '{query}' by author name completed ")
+class SearchByAuthor(SearchStrategy):
+    @log_manager.log_action(lambda query:f"Search book '{query}' by author name completed ")
     def search(self, books: List[Book],query : str) -> List[Book]:
         return [book for book in books if query.lower() in book.author.lower()]
 
 
-class SearchByGenre(Strategy):
+class SearchByGenre(SearchStrategy):
     def search(self, books: List[Book],query : str) -> List[Book]:
         return [book for book in books if query.lower() in book.genre.lower()]
 
 
-class SearchByYear(Strategy):
+class SearchByYear(SearchStrategy):
     def search(self, books: List[Book],query : str) -> List[Book]:
         if not query.isdigit():
             raise ValueError("Year must be numeric")
-        year= int(query)
-        return [book for book in books if book.year == year]
+        return [book for book in books if query in str(book.year)]
 
 
 
-class SearchStrategy:
+#class SearchStrategy:
 
-    def __init__(self, strategy :Strategy):
-        self._strategy = strategy
+    #def __init__(self, strategy :SearchStrategy):
+      #  self._strategy = strategy
 
-    def set_Stratgy(self, strategy : Strategy):
-        self._strategy=strategy
+    #def set_Stratgy(self, strategy : SearchStrategy):
+      #  self._strategy=strategy
 
-    def execute_search(self, books: List[Book], query: str) -> List[Book]:
-        return self._strategy.search(books, query)
+    #def execute_search(self, books: List[Book], query: str) -> List[Book]:
+      #  return self._strategy.search(books, query)
 
 
 

@@ -39,7 +39,8 @@ class FileManager:
                 writer= csv.writer(file)
                 writer.writerow(["title", "author", "is_loaned", "copies", "genre", "year"])
                 for book in books:
-                    writer.writerow(book.to_csv_row())
+                    if book.copies != 0:
+                        writer.writerow(book.to_csv_row())
         except Exception as e:
             print(f"Error writing to file {path}: {e}")
 
@@ -52,13 +53,14 @@ class FileManager:
             for existing_book in books:
                 if existing_book.equals(book):
                     return  # Book already exists
-            with open(path,"a",newline="") as file:
-             #   reader = csv.reader(file)
-              #  for row in reader:
-              #      if book.to_csv_row() == row:
-               #         return
-                writer= csv.writer(file)
-                writer.writerow(book.to_csv_row())
+            if book.copies != 0:
+                with open(path,"a",newline="") as file:
+                 #   reader = csv.reader(file)
+                  #  for row in reader:
+                  #      if book.to_csv_row() == row:
+                   #         return
+                    writer= csv.writer(file)
+                    writer.writerow(book.to_csv_row())
         except Exception as e:
             print(f"Error appending to file {path}: {e}")
 
@@ -67,6 +69,7 @@ class FileManager:
         # Read books from the main books file
         books = FileManager.read_from_csv(paths["books"])
         updated = False
+        updated_books = []
 
         # Try to find the book and update it
         for i, book in enumerate(books):

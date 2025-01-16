@@ -1,8 +1,6 @@
 import logging
 from functools import wraps
-from typing import Callable
-
-from pyexpat.errors import messages
+from typing import Callable, Optional
 
 
 class LogManager:
@@ -27,31 +25,54 @@ class LogManager:
         if not self.logger.handlers:  # Prevent adding multiple handlers
             self.logger.addHandler(file_handler)
 
+
     def log_success(self, action: str):
         message = f"{action} successfully"
         self.logger.info(message)
+
 
     def log_fail(self, action: str):
         messages = f"{action} fail"
         self.logger.error(messages)
 
     @staticmethod
-    def log_action(log_manager, action_name: Callable[..., str]):
+    def log_action(action_name: Callable[..., str]):
+        """Decorator to log actions with dynamic query handling."""
+
         def decorator(func):
             @wraps(func)
             def wrapper(self, *args, **kwargs):
+                log_manager = LogManager()  # Create a LogManager instance
+
                 try:
                     result = func(self, *args, **kwargs)
-                    log_manager.log_success(action_name(*args, **kwargs))
+
+                    # Extract `query` only for search actions
+                    query = kwargs.get("query") or (args[1] if len(args) > 1 else None)
+                    if "Search book" in action_name(""):
+                        action_str = action_name(query)
+                    else:
+                        action_str = action_name()
+
+                    log_manager.log_success(action_str)
                     return result
+
                 except Exception as e:
-                    log_manager.log_fail(action_name(*args, **kwargs))
-                    print(f"Error during action '{action_name(*args, **kwargs)}': {e}")  # Print the error message
+                    query = kwargs.get("query") or (args[1] if len(args) > 1 else None)
+                    if "Search book" in action_name(""):
+                        action_str = action_name(query)
+                    else:
+                        action_str = action_name()
+
+                    log_manager.log_fail(action_str)
+                    print(f"Error during action '{action_str}': {e}")
                     return None
 
             return wrapper
 
         return decorator
+
+
 
 
 
