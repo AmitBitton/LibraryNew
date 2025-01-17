@@ -8,9 +8,10 @@ from SearchStrategy import SearchStrategy
 class BookCollection:
 
     def __init__(self):
-        self._books = FileManager.read_from_csv("books.csv")
-        self.update_available_and_loaned_books()
+        self._books = FileManager.load_books_from_file()
 
+    def save_books(self):
+        FileManager.save_books_to_file(self.books())
 
     def update_available_and_loaned_books(self):
         """Separate books into available and loaned books and write to respective CSV files."""
@@ -29,7 +30,7 @@ class BookCollection:
                 existing_book.update_copies(copies)
                 return
         # add and update copy in book file and available book file
-        new_book = Book(title, author, is_loaned, copies, genre, year)
+        new_book = Book(title, author,copies, genre, year, is_loaned)
         self._books.append(new_book)
 
     def remove_book(self, book: Book):
@@ -48,19 +49,39 @@ class BookCollection:
                 return False
         raise BookNotFoundError(f"Can not remove the book:'{book.title}' by {book.author} not found in the collection.")
 
+    def load_books(self):
+        """Reloads books from the file to ensure the latest data is reflected."""
+        self._books = FileManager.load_books_from_file()
+
     def search_book(self,strategy :SearchStrategy , query :str = None):
         result = strategy.search(self._books,query)
         return BookIterator(result)
 
+    def find_book(self, title :str, genre = None, author = None , year = None) :
+        """Helper method to find a book in the collection"""
+        for book in self._books:
+            if book.title == title and  (genre is None or book.genre == genre) and (author is None or book.author == author) and (year is None or book.year == year):
+                return book
+        return None
+
     def __iter__(self):
         return BookIterator(self._books)
 
-    def books(self):
+    def books(self) -> list[Book]:
         return self._books
 
     def get_10_popular_books(self):
-        sorted_books= sorted(self.books(), key=lambda book:book._popularity_counter,reverse=True)
+        sorted_books= sorted(self.books(), key=lambda book:book.popularity_counter,reverse=True)
         return sorted_books[:10]
+
+    def get_all_genres(self):
+        """Returns a list of unique genres from all books."""
+        return list(set(book.genre for book in self._books))
+
+    def get_books_by_genre(self, genre):
+        """Returns books that belong to the selected genre."""
+        return [book for book in self._books if book.genre.lower() == genre.lower()]
+
 
 class BookIterator:
     def __init__(self, books: List[Book]):

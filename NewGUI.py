@@ -33,6 +33,12 @@ class LibraryApp:
         tk.Button(self.window, text="Login", command=self.login_screen).grid(row=1, column=0, columnspan=2, pady=10)
         tk.Button(self.window, text="Register", command=self.register_screen).grid(row=2, column=0, columnspan=2,pady=10)
 
+    def logout(self):
+        """Logs out the current user and returns to the welcome screen."""
+        self.log_manager.log_success("log out")
+        self.current_user = None
+        self.init_welcome_screen()
+
     def login_screen(self):
         self.clear_window()
 
@@ -99,7 +105,7 @@ class LibraryApp:
         tk.Label(self.window, text=f"Welcome, {self.current_user}", font=("Arial", 16)).grid(row=0, column=0,columnspan=2, pady=10)
         tk.Button(self.window, text="Library Manage", command=self.show_library_manage).grid(row=1, column=0,columnspan=2, pady=5)
         tk.Button(self.window, text="Show My Notifications", command=self.show_notifications_screen).grid(row=2, column=0,columnspan=2, pady=5)
-        tk.Button(self.window, text="Log Out", command=self.init_welcome_screen).grid(row=3, column=0, columnspan=2,pady=20)
+        tk.Button(self.window, text="Log Out", command=self.logout).grid(row=3, column=0, columnspan=2,pady=20)
 
 
     def show_library_manage(self):
@@ -171,7 +177,7 @@ class LibraryApp:
 
             try:
                 # Create the book object and add it to the library
-                book = Book(title, author, "No", int(copies), genre, int(year))
+                book = Book(title, author, int(copies),genre,int(year),"No")
                 self.library.add_book(book)
                 messagebox.showinfo("Success", "Book added successfully!")
                 self.show_library_manage()  # Redirect back to the main menu
@@ -216,17 +222,29 @@ class LibraryApp:
                 return
             try:
                 # Create a temporary book object to match the criteria
-                book_to_remove = Book(title, author, "No", 0, genre, int(year))
-                # Attempt to remove the book
-                self.library.remove_book(book_to_remove)
-                # Notify success
+                book_to_remove = Book(title, author,  0, genre, int(year),"No")
+                print(f"\n🔍 DEBUG: Trying to remove book -> {book_to_remove}\n")
+
+                # ✅ Check if book exists before attempting removal
+                existing_books = self.library.get_collection().books()
+                found_books = [book for book in existing_books if book.equals(book_to_remove)]
+
+                if not found_books:
+                    messagebox.showwarning("Book Not Found", f"Book '{title}' ({year}) not found in the collection.")
+                    return
+
+                # ✅ Remove the book
+                self.library.remove_book(found_books[0])
+                FileManager.save_books_to_file(self.library.get_collection().books(), "books_update.csv")
+
                 messagebox.showinfo("Success", f"Book '{title}' by {author} removed successfully!")
                 self.show_library_manage()  # Redirect back to main menu
+
             except Exception as e:
                 messagebox.showerror("Error", f"An error occurred: {str(e)}")
-                # Add buttons to the window
+
         tk.Button(self.window, text="Remove Book", command=remove_book).grid(row=6, column=0, columnspan=2, pady=10)
-        tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=7, column=0, columnspan=2,pady=10)
+        tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=7, column=0, columnspan=2, pady=10)
 
     def search_book_screen(self):
         self.clear_window()
@@ -311,15 +329,79 @@ class LibraryApp:
         tk.Label(self.window, text="View Books", font=("Arial", 16)).grid(row=0, column=0, columnspan=2, pady=10)
 
         # Button to view loaned books
-        tk.Button(self.window, text="View Loaned Books", command=self.view_loaned_books).grid(row=1, column=0, padx=5,
-                                                                                              pady=10)
+        tk.Button(self.window, text="View Loaned Books", command=self.view_loaned_books).grid(row=1, column=0, padx=5,pady=10)
 
         # Button to view available books
-        tk.Button(self.window, text="View Available Books", command=self.view_available_books).grid(row=1, column=1,
-                                                                                                    padx=5, pady=10)
+        tk.Button(self.window, text="View Available Books", command=self.view_available_books).grid(row=2, column=0,padx=5, pady=10)
+
+        # Button to view books by genre
+        tk.Button(self.window, text="View Books by Genre", command=self.view_books_by_genre_screen).grid(row=3,column=0,pady=10)
 
         # Back Button
-        tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=2, column=0, columnspan=2, pady=20)
+        tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=4, column=0, columnspan=2, pady=20)
+
+    def view_books_by_genre_screen(self):
+        self.clear_window()
+
+        frame = tk.Frame(self.window)
+        frame.place(relx=0.5, rely=0.1, anchor="n")  # Positioned slightly lower
+
+        tk.Label(frame, text="View Books by Genre", font=("Arial", 16)).grid(row=0, column=0, columnspan=2, pady=10)
+
+        tk.Label(frame, text="Select Genre:").grid(row=1, column=0, padx=5, pady=5, sticky="e")
+
+        # Dropdown for genres
+        genres = self.library.get_collection().get_all_genres()
+        selected_genre = tk.StringVar()
+        selected_genre.set(genres[0] if genres else "No genres found")
+
+        genre_dropdown = ttk.Combobox(frame, textvariable=selected_genre, values=genres, state="readonly", width=30)
+        genre_dropdown.grid(row=1, column=1, padx=5, pady=5)
+
+        # Scrollable Canvas for results
+        results_frame = tk.Frame(self.window)
+        results_frame.place(relx=0.5, rely=0.5, anchor="center")
+
+        canvas = tk.Canvas(results_frame, width=600, height=300)
+        scrollbar = tk.Scrollbar(results_frame, orient="vertical", command=canvas.yview)
+        scrollable_frame = tk.Frame(canvas)
+
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        def display_books():
+            """Fetch and display books based on selected genre with alignment."""
+            genre = selected_genre.get()
+            books = self.library.get_collection().get_books_by_genre(genre)
+
+            # Clear previous results
+            for widget in scrollable_frame.winfo_children():
+                widget.destroy()
+
+            if not books:
+                tk.Label(scrollable_frame, text="No books found for this genre.", font=("Arial", 12, "italic")).pack(
+                    pady=5)
+            else:
+                for book in books:
+                    # ** Uniform line alignment **
+                    book_text = f"Title: {book.title:<35} Author: {book.author:<25} Year: {book.year}"
+                    tk.Label(scrollable_frame, text=book_text, font=("Arial", 10), anchor="w", padx=10, pady=2).pack()
+
+        # Search Button
+        tk.Button(frame, text="Show Books", command=display_books, width=30).grid(row=2, column=0, columnspan=2,
+                                                                                  pady=10)
+
+        # Back Button
+        tk.Button(frame, text="Back", command=self.view_books_screen, width=30).grid(row=3, column=0, columnspan=2,
+                                                                                     pady=10)
 
     def view_loaned_books(self):
         """Displays loaned books in a new window."""
@@ -408,7 +490,7 @@ class LibraryApp:
                 return
 
             try:
-                book_to_lend = Book(title, author, "No", 1, genre, int(year))  # Placeholder book object
+                book_to_lend = Book(title, author, 1, genre, int(year),"No")  # Placeholder book object
                 borrowed = self.library.borrow_book(borrower, phone, email, book_to_lend)
                 if borrowed:
                     messagebox.showinfo("Success", f"Book '{title}' ({year}) loaned successfully to {borrower}!")
@@ -450,31 +532,67 @@ class LibraryApp:
         genre_entry.grid(row=4, column=1, padx=5, pady=5)
 
 
+        # def return_book():
+        #     title = title_entry.get()
+        #     author = author_entry.get()
+        #     year = year_entry.get()
+        #     genre = genre_entry.get()
+        #
+        #     # Validate input fields
+        #     if not all([title, author, year, genre]):
+        #         messagebox.showerror("Error", "All fields (Title, Author, Year, and Genre) are required!")
+        #         return
+        #
+        #     if not year.isdigit():
+        #         messagebox.showerror("Error", "Year must be a valid number!")
+        #         return
+        #
+        #     year = int(year)
+        #
+        #     try:
+        #         # First find the book
+        #         found_book = self.library.get_collection().find_book(title, genre, author, year)
+        #
+        #         if found_book is None:
+        #             messagebox.showerror("Error", f"Book '{title}' ({year}) was not found in the library.")
+        #             return
+        #
+        #         # Check if the book is actually loaned
+        #         if not found_book.is_loaned:
+        #             messagebox.showerror("Error", f"Book '{title}' ({year}) is not currently borrowed!")
+        #             return
+        #             # Check if the book is actually loaned
+        #         if not any(status == "Yes" for status in found_book.borrowed_copies_status().values()):
+        #             raise ValueError(f"No borrowed copies of '{title}' ({year}) to return.")
+        #         # Attempt to return the book
+        #         self.library.return_book(found_book.title, found_book.genre, found_book.year, found_book.author)
+        #         messagebox.showinfo("Success", f"Book '{title}' ({year}) returned successfully!")
+        #         self.show_library_manage()
+        #
+        #     except Exception as e:
+        #         messagebox.showerror("Error", f"Failed to return book: {str(e)}")
+        #         raise
+        #     # Return Button
         def return_book():
-            title = title_entry.get().strip()
-            author = author_entry.get().strip()
-            year = year_entry.get().strip()
-            genre = genre_entry.get().strip()
-            # Validate fields
-            if not title or not author or not year or not genre :
-                messagebox.showerror("Error", "Please fill in all required fields.")
-                return
-            if not year.isdigit():
-                messagebox.showerror("Error", "Year must be a valid number!")
+            # Get form data
+            title = title_entry.get()
+            author = author_entry.get()
+            year = year_entry.get()
+            genre = genre_entry.get()
+
+            if not title:
+                messagebox.showerror("Error", "Title is required.")
                 return
 
-            try:
-                book_to_return = Book(title, author, "No", 1, genre, int(year))  # Placeholder book object
-                returned = self.library.return_book(book_to_return)
-                if returned:
-                    messagebox.showinfo("Success", f"Book '{title}' ({year}) returned successfully to the library!")
-                else:
-                    messagebox.showwarning("Book Not Found", f"The book '{title}' ({year}) was not found in the library.")
-                self.show_library_manage()
-            except ValueError as e:
-                messagebox.showerror("Error", str(e))
+            year = int(year) if year else None
 
-            # Lend Book Button
+            # Return the book
+
+            if self.library.return_book(title, author, year,genre):
+                messagebox.showinfo("Success", f"Book '{title}' returned successfully!")
+            else:
+                messagebox.showerror("Error", f"Failed to return book")
+            self.show_library_manage()
 
         tk.Button(self.window, text="Return Book", command=return_book).grid(row=5, column=0, columnspan=2, pady=10)
 
@@ -496,10 +614,11 @@ class LibraryApp:
 
             for i, book in enumerate(popular_books, start=1):
                 waiting_list_count = len(book.get_waiting_list()) if book.get_waiting_list() else 0
+                popularity_score = book.popularity_counter if hasattr(book, "popularity_counter") else 0  # Ensure no AttributeError
                 book_text = (f"{i}. {book.title} by {book.author} ({book.year}) - "
                              f"Borrowed {book.borrowed_copies} times, "
                              f"{waiting_list_count} people in waiting list - "
-                             f"Total Popularity Counter: {book.popularity_counter}")
+                             f"Total Popularity Counter: {popularity_score}")
                 tk.Label(results_frame, text=book_text, font=("Arial", 10), anchor="w", justify="left").grid(row=i,
                                                                                                              column=0,
                                                                                                              padx=5,

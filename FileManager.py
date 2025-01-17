@@ -1,5 +1,5 @@
 import csv
-from typing import List, Dict
+from typing import List, Dict, TextIO, Union, IO
 from Book import Book
 import os
 
@@ -12,7 +12,7 @@ class FileManager:
     def ensure_file_exists(path: str):
         """Ensure the CSV file exists with headers"""
         if not os.path.exists(path):
-            with open(path, "w", newline="") as file:
+            with open(path, "w", newline="",encoding="utf-8") as file:
                 writer = csv.writer(file)
                 writer.writerow(["title", "author", "is_loaned", "copies", "genre", "year"])
 
@@ -21,7 +21,7 @@ class FileManager:
     def read_from_csv(path:str) -> List[Book]:
         books= []
         try:
-            with open(path,"r") as file:
+            with open(path,"r",encoding="utf-8") as file:
                 reader= csv.reader(file)
                 next(reader)
                 for row in reader:
@@ -35,11 +35,11 @@ class FileManager:
     @staticmethod
     def write_to_csv(path:str,books:List[Book]):
         try:
-            with open(path,"w",newline="") as file:
+            with open(path,"w",newline="",encoding="utf-8") as file:
                 writer= csv.writer(file)
                 writer.writerow(["title", "author", "is_loaned", "copies", "genre", "year"])
                 for book in books:
-                    if book.copies != 0:
+                    if book.copies > 0:
                         writer.writerow(book.to_csv_row())
         except Exception as e:
             print(f"Error writing to file {path}: {e}")
@@ -89,22 +89,28 @@ class FileManager:
         # Handle available and loaned books
         if book_to_update.is_loaned:
             # Remove from available and add to loaned
-            available_books = FileManager.read_from_csv(paths["available"])
-            available_books = [book for book in available_books if not book.equals(book_to_update)]
-            FileManager.write_to_csv(paths["available"], available_books)
+            # available_books = FileManager.read_from_csv(paths["available"])
+            # available_books = [book for book in available_books if not book.equals(book_to_update)]
+            # FileManager.write_to_csv(paths["available"], available_books)
+            FileManager.delete_row(paths["available"], book_to_update)
 
             loaned_books = FileManager.read_from_csv(paths["loaned"])
             if not any(book.equals(book_to_update) for book in loaned_books):
                 FileManager.append_to_csv(paths["loaned"], book_to_update)
+            else:
+                FileManager.write_to_csv(paths["loaned"], [book for book in books if book.is_loaned])
         else:
             # Remove from loaned and add to available
-            loaned_books = FileManager.read_from_csv(paths["loaned"])
-            loaned_books = [book for book in loaned_books if not book.equals(book_to_update)]
-            FileManager.write_to_csv(paths["loaned"], loaned_books)
+            # loaned_books = FileManager.read_from_csv(paths["loaned"])
+            # loaned_books = [book for book in loaned_books if not book.equals(book_to_update)]
+            # FileManager.write_to_csv(paths["loaned"], loaned_books)
+            FileManager.delete_row(paths["loaned"], book_to_update)
 
             available_books = FileManager.read_from_csv(paths["available"])
             if not any(book.equals(book_to_update) for book in available_books):
                 FileManager.append_to_csv(paths["available"], book_to_update)
+            else:
+                FileManager.write_to_csv(paths["available"], [book for book in books if not book.is_loaned])
 
         if updated:
             print(f"Updated book '{book_to_update.title}' successfully.")
@@ -120,3 +126,62 @@ class FileManager:
             print(f"Deleted row successfully from {path}.")
         else:
             print("No matching row found to delete.")
+
+
+    @staticmethod
+    def load_books_from_file(file_path="books_update.csv"):
+        books = []
+        try:
+            file_to_load = file_path if os.path.exists(file_path) else "Books.csv"
+
+            with open(file_to_load, mode="r", newline="", encoding="utf-8") as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    waiting_list = eval(row["waiting_list"]) if "waiting_list" in row and row["waiting_list"] else []
+                    borrowed_copies = eval(row["borrowed_copies"]) if "borrowed_copies" in row and row["borrowed_copies"] else {}
+
+                    book = Book(
+                        title=row["title"],
+                        author=row["author"],
+                        year=int(row["year"]),
+                        copies=int(row["copies"]),
+                        genre=row["genre"],
+                        is_loaned=row.get("is_loaned", "No"),
+                        borrowed_copies=borrowed_copies,
+                        waiting_list=waiting_list,
+                        popularity_counter=int(row.get("popularity_counter", 0)),
+                    )
+                    books.append(book)
+
+            print(f"Books loaded successfully from {file_to_load}.")
+        except FileNotFoundError:
+            print(f"File {file_path} not found. Returning an empty list.")
+        except Exception as e:
+            print(f"Error loading books: {e}")
+
+        return books
+
+    @staticmethod
+    def save_books_to_file(books: list[Book], file_path="books_update.csv") -> None:
+        try:
+            with open(file_path, mode="w", newline="", encoding="utf-8") as file:
+                fieldnames = ["title", "author", "year", "copies", "genre", "is_loaned", "popularity_counter", "waiting_list", "borrowed_copies"]
+
+                writer = csv.DictWriter(file, fieldnames=fieldnames)
+                writer.writeheader()
+                for book in books:
+                    writer.writerow({
+                        "title": book.title,
+                        "author": book.author,
+                        "year": book.year,
+                        "copies": book.copies,
+                        "genre": book.genre,
+                        "is_loaned": "Yes" if book.is_loaned else "No",
+                        "borrowed_copies": str(book.borrowed_copies_status()),
+                        "waiting_list": str(book.get_waiting_list()),
+                        "popularity_counter": book.popularity_counter,
+                    })
+
+            print(f"Books saved successfully to {file_path}.")
+        except Exception as e:
+            print(f"Error saving books: {e}")

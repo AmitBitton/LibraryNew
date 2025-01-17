@@ -1,17 +1,24 @@
 class Book:
     # book constructor
-    def __init__(self, title: str, author: str, is_loaned: str, copies: int, genre: str, year: int ):
+    def __init__(self, title: str, author: str, copies: int, genre: str, year: int,
+                 is_loaned="No", borrowed_copies=0, waiting_list=None, popularity_counter=0):
         self._title = title
         self._author = author
         self._copies = copies
         self._genre = genre
         self._year = year
-        self._waiting_list = []
-        self._popularity_counter = 0
-        if is_loaned == "Yes":
-            self._borrowed_copies_status = {i: "Yes" for i in range(1, copies + 1)}
+        self._waiting_list = waiting_list if waiting_list is not None else []
+        if borrowed_copies:
+            self._borrowed_copies_status = eval(str(borrowed_copies))
         else:
-            self._borrowed_copies_status = {i: "No" for i in range(1, copies + 1)}
+            self._borrowed_copies_status = {i: "Yes" for i in range(1, copies + 1)} if is_loaned == "Yes" else {i: "No" for i in range(1, copies + 1)}
+
+            # Initialize popularity_counter
+        if popularity_counter == 0:
+                # Default to the number of borrowed copies
+            self._popularity_counter = self.borrowed_copies
+        else:
+            self._popularity_counter = popularity_counter
 
     @property
     def available_copies(self):
@@ -58,11 +65,16 @@ class Book:
         return False
 
     def return_copy(self):
-        for key, value in self._borrowed_copies_status.items():
-            if value == "Yes":
-                self._borrowed_copies_status[key] = "No"
-                return True
-        return False
+        try:
+            for key, value in self._borrowed_copies_status.items():
+                if value == "Yes":
+                    self._borrowed_copies_status[key] = "No"
+                    return True
+            return False
+
+        except Exception as e:
+            print(f"Error in return_copy: {str(e)}")
+            return False
 
     def to_csv_row(self) -> list:
         return [self._title, self._author, "Yes" if self.is_loaned else "No", self._copies, self._genre, self._year]
@@ -83,7 +95,9 @@ class Book:
         return self._popularity_counter
 
     def __str__(self):
-        return f"'{self._title}' by {self._author}'({self._year})-{self._genre}:{self._copies} total copies"
+        return (f"Book(title='{self.title}' by '{self._author}', year={self._year}, "
+                f"copies={self._copies}, genre='{self._genre}', is_loaned={self.is_loaned}, "
+                f"popularity_counter={self._popularity_counter}), waiting_list={str(self._waiting_list)}, borrowed_copies={self.borrowed_copies}")
 
     @property
     def title(self):
@@ -112,8 +126,11 @@ class Book:
     def equals(self, other):
         if not isinstance(other, Book):
             return False
-        return (self.title.lower() == other.title.lower() and
-                self.author.lower() == other.author.lower())
+        return (self.title.lower().strip() == other.title.lower().strip() and
+                self.author.lower().strip() == other.author.lower().strip() and
+                self.year == other.year and
+                self._genre.lower().strip() == other._genre.lower().strip()
+                )
 
     def update_book(self, other):
         if isinstance(other, Book):
