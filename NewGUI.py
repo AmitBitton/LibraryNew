@@ -1,9 +1,10 @@
+import re
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
 
 from Book import Book
-from FileManager import FileManager  # Assuming FileManager is defined elsewhere
+from FileManager import FileManager
 from Library import Library
 from LogManager import LogManager
 from Notifications import Notifications
@@ -171,10 +172,16 @@ class LibraryApp:
             if not title or not author or not genre or not year or not copies:
                 messagebox.showerror("Error", "All fields are required!")
                 return
-            if not year.isdigit() or not copies.isdigit():
-                messagebox.showerror("Error", "Year and Copies must be numeric!")
+            # if not year.isdigit() or not copies.isdigit():
+            #     messagebox.showerror("Error", "Year and Copies must be numeric!")
+            #     return
+            if not re.match(r"^-?\d+$", year):  # Allows negative years
+                messagebox.showerror("Error", "Year must be a number!")
                 return
 
+            if not copies.isdigit() or int(copies) <= 0:  # Ensures copies are positive
+                messagebox.showerror("Error", "Copies must be a positive number!")
+                return
             try:
                 # Create the book object and add it to the library
                 book = Book(title, author, int(copies),genre,int(year),"No")
@@ -217,8 +224,8 @@ class LibraryApp:
             if not title or not author or not genre or not year:
                 messagebox.showerror("Error", "All fields are required!")
                 return
-            if not year.isdigit():
-                messagebox.showerror("Error", "Year must be a number!")
+            if not re.match(r"^-?\d+$", year):  # Allows negative years
+                messagebox.showerror("Error", "Year must be a valid number (can be negative)!")
                 return
             try:
                 # Create a temporary book object to match the criteria
@@ -246,12 +253,90 @@ class LibraryApp:
         tk.Button(self.window, text="Remove Book", command=remove_book).grid(row=6, column=0, columnspan=2, pady=10)
         tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=7, column=0, columnspan=2, pady=10)
 
+    # def search_book_screen(self):
+    #     self.clear_window()
+    #     tk.Label(self.window, text="Search Book", font=("Arial", 16)).grid(row=0, column=0, columnspan=2, pady=10)
+    #
+    #     # Search Entry
+    #     search_entry = tk.Entry(self.window)
+    #     search_entry.grid(row=1, column=0, padx=5, pady=5, columnspan=2)
+    #
+    #     # Dropdown for search criteria
+    #     search_criteria = tk.StringVar()
+    #     search_criteria.set("Title")  # Default selection
+    #
+    #     criteria_dropdown = ttk.Combobox(self.window, textvariable=search_criteria, state="readonly",
+    #                                      values=["Title", "Author", "Genre", "Year"])
+    #     criteria_dropdown.grid(row=2, column=0, padx=5, pady=5, columnspan=2)
+    #
+    #     # Frame for displaying search results
+    #     results_frame = tk.Frame(self.window)
+    #     results_frame.grid(row=3, column=0, columnspan=2, pady=10)  # Added more padding for better spacing
+    #
+    #     def dynamic_search(event=None):
+    #         """Perform search dynamically and highlight search term."""
+    #         query = search_entry.get().strip()
+    #         if not query:
+    #             for widget in results_frame.winfo_children():
+    #                 widget.destroy()
+    #             return
+    #
+    #         # Select search strategy
+    #         strategy_map = {
+    #             "Title": SearchByTitle(),
+    #             "Author": SearchByAuthor(),
+    #             "Genre": SearchByGenre(),
+    #             "Year": SearchByYear()
+    #         }
+    #         strategy = strategy_map.get(search_criteria.get())
+    #         if not strategy:
+    #             return
+    #
+    #         # Perform search using BookIterator
+    #         search_results = self.library.get_collection().search_book(strategy, query)
+    #
+    #         # Clear previous results
+    #         for widget in results_frame.winfo_children():
+    #             widget.destroy()
+    #
+    #         # Display results
+    #         if not search_results.has_next():
+    #             tk.Label(results_frame, text="No books found.", font=("Arial", 12, "italic")).grid(row=0, column=0,
+    #                                                                                                padx=5, pady=5)
+    #         else:
+    #             row_index = 0
+    #             while search_results.has_next():
+    #                 book = search_results.__next__()  # ✅ Forces `__str__()` conversion
+    #                 formatted_text = str(book).replace(query, f"**{query}**")  # Bold the query
+    #
+    #                 # Using `tk.Text` for text formatting (instead of `tk.Label`)
+    #                 text_widget = tk.Text(results_frame, height=2, width=70, wrap="word", font=("Arial", 12))
+    #                 text_widget.insert("insert", book)  # Insert full book text
+    #                 start_idx = str(book).lower().find(query.lower())  # Find the position of the search term
+    #                 if start_idx != -1:
+    #                     end_idx = start_idx + len(query)
+    #                     text_widget.tag_add("highlight", f"1.{start_idx}", f"1.{end_idx}")  # Apply highlight tag
+    #                     text_widget.tag_config("highlight", font=("Arial", 12, "bold"))  # Bold the search term
+    #
+    #                 text_widget.config(state="disabled", relief="flat",
+    #                                    bg=self.window.cget("bg"))  # Make text read-only
+    #                 text_widget.grid(row=row_index, column=0, padx=10, pady=5)  # Add spacing
+    #
+    #                 row_index += 1
+    #
+    #     # Bind search entry to update results dynamically
+    #     search_entry.bind("<KeyRelease>", dynamic_search)
+    #
+    #     # Back Button
+    #     tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=4, column=0, columnspan=2, pady=10)
+
     def search_book_screen(self):
+        """Displays the search book screen with dynamic search functionality in a structured table."""
         self.clear_window()
         tk.Label(self.window, text="Search Book", font=("Arial", 16)).grid(row=0, column=0, columnspan=2, pady=10)
 
         # Search Entry
-        search_entry = tk.Entry(self.window)
+        search_entry = tk.Entry(self.window, width=40)
         search_entry.grid(row=1, column=0, padx=5, pady=5, columnspan=2)
 
         # Dropdown for search criteria
@@ -262,16 +347,43 @@ class LibraryApp:
                                          values=["Title", "Author", "Genre", "Year"])
         criteria_dropdown.grid(row=2, column=0, padx=5, pady=5, columnspan=2)
 
-        # Frame for displaying search results
+        # Results Frame with Scrollbar
         results_frame = tk.Frame(self.window)
-        results_frame.grid(row=3, column=0, columnspan=2, pady=10)  # Added more padding for better spacing
+        results_frame.grid(row=3, column=0, columnspan=2, pady=10)
+
+        # Scrollbar for table
+        scrollbar = tk.Scrollbar(results_frame, orient="vertical")
+
+        # Table (Treeview)
+        columns = ("Title", "Author", "Genre", "Year", "Copies", "Loaned")
+        results_table = ttk.Treeview(results_frame, columns=columns, show="headings", yscrollcommand=scrollbar.set)
+
+        # Set column headings
+        for col in columns:
+            results_table.heading(col, text=col, anchor="w")
+            results_table.column(col, width=150, anchor="w")  # Adjust width
+
+        # Scrollbar Configuration
+        scrollbar.config(command=results_table.yview)
+        scrollbar.pack(side="right", fill="y")
+
+        # Place Table
+        results_table.pack(side="left", fill="both", expand=True)
+
+        def case_insensitive_replace(text, query, replacement):
+            """Replace query inside text, case-insensitive, but keep original case."""
+            pattern = re.compile(re.escape(query), re.IGNORECASE)
+
+            def match_case(m):
+                return f"{replacement[0]}{m.group(0)}{replacement[1]}"  # Keep original match's case
+
+            return pattern.sub(match_case, text)
 
         def dynamic_search(event=None):
             """Perform search dynamically and highlight search term."""
             query = search_entry.get().strip()
             if not query:
-                for widget in results_frame.winfo_children():
-                    widget.destroy()
+                results_table.delete(*results_table.get_children())  # Clear results
                 return
 
             # Select search strategy
@@ -285,37 +397,42 @@ class LibraryApp:
             if not strategy:
                 return
 
-            # Perform search using BookIterator
-            search_results = self.library.get_collection().search_book(strategy, query)
+            # Perform search
+            search_results, has_results = self.library.get_collection().search_book(strategy, query)
 
             # Clear previous results
-            for widget in results_frame.winfo_children():
-                widget.destroy()
+            results_table.delete(*results_table.get_children())
 
-            # Display results
-            if not search_results.has_next():
-                tk.Label(results_frame, text="No books found.", font=("Arial", 12, "italic")).grid(row=0, column=0,
-                                                                                                   padx=5, pady=5)
-            else:
-                row_index = 0
-                while search_results.has_next():
-                    book = search_results.__next__()
-                    formatted_text = str(book).replace(query, f"**{query}**")  # Bold the query
+            if not has_results:
+                results_table.insert("", "end", values=("No books found", "", "", "", "", ""))
+                return
 
-                    # Using `tk.Text` for text formatting (instead of `tk.Label`)
-                    text_widget = tk.Text(results_frame, height=2, width=70, wrap="word", font=("Arial", 12))
-                    text_widget.insert("insert", str(book))  # Insert full book text
-                    start_idx = str(book).lower().find(query.lower())  # Find the position of the search term
-                    if start_idx != -1:
-                        end_idx = start_idx + len(query)
-                        text_widget.tag_add("highlight", f"1.{start_idx}", f"1.{end_idx}")  # Apply highlight tag
-                        text_widget.tag_config("highlight", font=("Arial", 12, "bold"))  # Bold the search term
+            # Display results in the table
+            for book in search_results:
+                if search_criteria.get() == "Title":
+                    title = case_insensitive_replace(book.title, query, ("[","]"))
+                else:
+                    title = book.title
 
-                    text_widget.config(state="disabled", relief="flat",
-                                       bg=self.window.cget("bg"))  # Make text read-only
-                    text_widget.grid(row=row_index, column=0, padx=10, pady=5)  # Add spacing
+                if search_criteria.get() == "Author":
+                    author = case_insensitive_replace(book.author, query, ("[","]"))
+                else:
+                    author = book.author
 
-                    row_index += 1
+                if search_criteria.get() == "Genre":
+                    genre = case_insensitive_replace(book.genre, query, ("[","]"))
+                else:
+                    genre = book.genre
+
+                if search_criteria.get() == "Year":
+                    year = case_insensitive_replace(str(book.year), query, ("[","]"))
+                else:
+                    year = book.year
+
+                copies = book.copies
+                loaned = "Yes" if book.is_loaned else "No"
+
+                results_table.insert("", "end", values=(title, author, genre, year, copies, loaned))
 
         # Bind search entry to update results dynamically
         search_entry.bind("<KeyRelease>", dynamic_search)
@@ -324,114 +441,170 @@ class LibraryApp:
         tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=4, column=0, columnspan=2, pady=10)
 
     def view_books_screen(self):
+        """Displays the book viewing options in the main window."""
         self.clear_window()
 
         tk.Label(self.window, text="View Books", font=("Arial", 16)).grid(row=0, column=0, columnspan=2, pady=10)
 
+        # Button to view ALL books
+        tk.Button(self.window, text="View All Books", command=self.view_all_books).grid(row=1, column=0, padx=5,
+                                                                                        pady=10)
+
         # Button to view loaned books
-        tk.Button(self.window, text="View Loaned Books", command=self.view_loaned_books).grid(row=1, column=0, padx=5,pady=10)
+        tk.Button(self.window, text="View Loaned Books", command=self.view_loaned_books).grid(row=2, column=0, padx=5,
+                                                                                              pady=10)
 
         # Button to view available books
-        tk.Button(self.window, text="View Available Books", command=self.view_available_books).grid(row=2, column=0,padx=5, pady=10)
+        tk.Button(self.window, text="View Available Books", command=self.view_available_books).grid(row=3, column=0,
+                                                                                                    padx=5, pady=10)
 
         # Button to view books by genre
-        tk.Button(self.window, text="View Books by Genre", command=self.view_books_by_genre_screen).grid(row=3,column=0,pady=10)
+        tk.Button(self.window, text="View Books by Genre", command=self.view_books_by_genre_screen).grid(row=4,
+                                                                                                         column=0,
+                                                                                                         pady=10)
 
         # Back Button
-        tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=4, column=0, columnspan=2, pady=20)
+        tk.Button(self.window, text="Back", command=self.init_main_menu).grid(row=5, column=0, columnspan=2, pady=20)
+
+    def view_all_books(self):
+        """Displays ALL books inside the main window with full details."""
+        all_books = self.library.get_collection().books()  # Fetch all books
+
+        self.show_books_table("All Books in Library", all_books, full_details=True)
+
+    def show_books_table(self, title, books, full_details=False):
+        """Displays books in a structured, centered Treeview table inside the main window."""
+        self.clear_window()  # Clear the previous screen
+
+        tk.Label(self.window, text=title, font=("Arial", 16)).pack(pady=10)
+
+        # Frame for table and scrollbar
+        table_frame = tk.Frame(self.window)
+        table_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        # Scrollbar
+        scrollbar = ttk.Scrollbar(table_frame, orient="vertical")
+
+        # Columns based on whether we need full details or not
+        columns = ("Title", "Author", "Genre", "Year") if not full_details else (
+        "Title", "Author", "Genre", "Year", "Copies", "Loaned")
+
+        books_table = ttk.Treeview(table_frame, columns=columns, show="headings", yscrollcommand=scrollbar.set)
+
+        # Set column headings & adjust text alignment (CENTER)
+        for col in columns:
+            books_table.heading(col, text=col, anchor="center")  # Center column headers
+            books_table.column(col, width=150, anchor="center")  # Center text inside cells
+
+        # Scrollbar Configuration
+        scrollbar.config(command=books_table.yview)
+        scrollbar.pack(side="right", fill="y")
+        books_table.pack(side="left", fill="both", expand=True)
+
+        # Display books in the table
+        if not books:
+            empty_values = ["No books found"] + [""] * (len(columns) - 1)
+            books_table.insert("", "end", values=empty_values)
+        else:
+            for book in books:
+                book_values = (book.title, book.author, book.genre, book.year)
+
+                if full_details:
+                    book_values += (book.copies, "Yes" if book.is_loaned else "No")
+
+                books_table.insert("", "end", values=book_values)
+
+        # Back Button to return to the main menu
+        tk.Button(self.window, text="Back", command=self.view_books_screen).pack(pady=10)
 
     def view_books_by_genre_screen(self):
+        """Displays books by selected genre in a structured table format with a searchable dropdown."""
         self.clear_window()
 
-        frame = tk.Frame(self.window)
-        frame.place(relx=0.5, rely=0.1, anchor="n")  # Positioned slightly lower
+        # Title Label
+        tk.Label(self.window, text="View Books by Genre", font=("Arial", 16)).pack(pady=10)
 
-        tk.Label(frame, text="View Books by Genre", font=("Arial", 16)).grid(row=0, column=0, columnspan=2, pady=10)
+        # Dropdown Frame
+        dropdown_frame = tk.Frame(self.window)
+        dropdown_frame.pack(pady=5)
 
-        tk.Label(frame, text="Select Genre:").grid(row=1, column=0, padx=5, pady=5, sticky="e")
+        tk.Label(dropdown_frame, text="Select Genre:").pack(side="left", padx=5)
 
-        # Dropdown for genres
-        genres = self.library.get_collection().get_all_genres()
+        # Fetch all genres
+        all_genres = self.library.get_collection().get_all_genres()
         selected_genre = tk.StringVar()
-        selected_genre.set(genres[0] if genres else "No genres found")
+        selected_genre.set(all_genres[0] if all_genres else "No genres found")
 
-        genre_dropdown = ttk.Combobox(frame, textvariable=selected_genre, values=genres, state="readonly", width=30)
-        genre_dropdown.grid(row=1, column=1, padx=5, pady=5)
+        # Create a searchable dropdown
+        genre_dropdown = ttk.Combobox(dropdown_frame, textvariable=selected_genre, values=all_genres, state="normal",
+                                      width=30)
+        genre_dropdown.pack(side="left", padx=5)
 
-        # Scrollable Canvas for results
-        results_frame = tk.Frame(self.window)
-        results_frame.place(relx=0.5, rely=0.5, anchor="center")
+        # Table Frame
+        table_frame = tk.Frame(self.window)
+        table_frame.pack(fill="both", expand=True, padx=20, pady=10)
 
-        canvas = tk.Canvas(results_frame, width=600, height=300)
-        scrollbar = tk.Scrollbar(results_frame, orient="vertical", command=canvas.yview)
-        scrollable_frame = tk.Frame(canvas)
+        # Scrollbar
+        scrollbar = ttk.Scrollbar(table_frame, orient="vertical")
 
-        scrollable_frame.bind(
-            "<Configure>",
-            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-        )
+        # Table (Treeview)
+        columns = ("Title", "Author", "Year")
+        books_table = ttk.Treeview(table_frame, columns=columns, show="headings", yscrollcommand=scrollbar.set)
 
-        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-        canvas.configure(yscrollcommand=scrollbar.set)
+        # Set column headings and adjust text alignment (CENTER)
+        for col in columns:
+            books_table.heading(col, text=col, anchor="center")  # Center column headers
+            books_table.column(col, width=200, anchor="center")  # Center text inside cells
 
-        canvas.pack(side="left", fill="both", expand=True)
+        # Scrollbar Configuration
+        scrollbar.config(command=books_table.yview)
         scrollbar.pack(side="right", fill="y")
+        books_table.pack(side="left", fill="both", expand=True)
 
         def display_books():
-            """Fetch and display books based on selected genre with alignment."""
+            """Fetch and display books based on selected genre in the table."""
             genre = selected_genre.get()
             books = self.library.get_collection().get_books_by_genre(genre)
 
             # Clear previous results
-            for widget in scrollable_frame.winfo_children():
-                widget.destroy()
+            books_table.delete(*books_table.get_children())
 
             if not books:
-                tk.Label(scrollable_frame, text="No books found for this genre.", font=("Arial", 12, "italic")).pack(
-                    pady=5)
+                books_table.insert("", "end", values=("No books found", "", ""))
             else:
                 for book in books:
-                    # ** Uniform line alignment **
-                    book_text = f"Title: {book.title:<35} Author: {book.author:<25} Year: {book.year}"
-                    tk.Label(scrollable_frame, text=book_text, font=("Arial", 10), anchor="w", padx=10, pady=2).pack()
+                    books_table.insert("", "end", values=(book.title, book.author, book.year))
+
+        def update_dropdown(event=None):
+            """Filters the dropdown list based on user input."""
+            typed_text = selected_genre.get().lower()
+            filtered_genres = [genre for genre in all_genres if typed_text in genre.lower()]
+
+            # Update dropdown values dynamically
+            genre_dropdown["values"] = filtered_genres if filtered_genres else all_genres
+
+        # Bind key release for dynamic search filtering
+        genre_dropdown.bind("<KeyRelease>", update_dropdown)
+
+        # Bind selection change to auto-update table
+        genre_dropdown.bind("<<ComboboxSelected>>", lambda event: display_books())
 
         # Search Button
-        tk.Button(frame, text="Show Books", command=display_books, width=30).grid(row=2, column=0, columnspan=2,
-                                                                                  pady=10)
+        tk.Button(self.window, text="Show Books", command=display_books, width=30).pack(pady=10)
 
         # Back Button
-        tk.Button(frame, text="Back", command=self.view_books_screen, width=30).grid(row=3, column=0, columnspan=2,
-                                                                                     pady=10)
+        tk.Button(self.window, text="Back", command=self.view_books_screen, width=30).pack(pady=10)
 
     def view_loaned_books(self):
-        """Displays loaned books in a new window."""
+        """Displays loaned books inside the main window (without opening a new one)."""
         loaned_books = FileManager.read_from_csv("loaned_books.csv")
-
-        self.show_books_list("Loaned Books", loaned_books)
+        self.show_books_table("Loaned Books", loaned_books)
 
     def view_available_books(self):
-        """Displays available books in a new window."""
+        """Displays available books inside the main window (without opening a new one)."""
         available_books = FileManager.read_from_csv("available_books.csv")
+        self.show_books_table("Available Books", available_books)
 
-        self.show_books_list("Available Books", available_books)
-
-    def show_books_list(self, title, books):
-        """Generic method to display a list of books in a new window."""
-        books_window = tk.Toplevel(self.window)
-        books_window.title(title)
-
-        tk.Label(books_window, text=title, font=("Arial", 16)).pack(pady=10)
-
-        if not books:
-            tk.Label(books_window, text="No books found.", font=("Arial", 12, "italic")).pack(pady=5)
-        else:
-            listbox = tk.Listbox(books_window, width=80, height=20)
-            listbox.pack(padx=10, pady=10)
-
-            for book in books:
-                listbox.insert(tk.END, f"{book.title} by {book.author} ({book.year}) - {book.genre}")
-
-        tk.Button(books_window, text="Close", command=books_window.destroy).pack(pady=10)
 
     def lend_book_screen(self):
         self.clear_window()
@@ -485,8 +658,8 @@ class LibraryApp:
             if not title or not author or not year or not genre or not borrower or not phone or not email:
                 messagebox.showerror("Error", "Please fill in all required fields.")
                 return
-            if not year.isdigit():
-                messagebox.showerror("Error", "Year must be a valid number!")
+            if not re.match(r"^-?\d+$", year):  # Allows negative years
+                messagebox.showerror("Error", "Year must be a valid number (can be negative)!")
                 return
 
             try:
@@ -588,7 +761,7 @@ class LibraryApp:
 
             # Return the book
 
-            if self.library.return_book(title, author, year,genre):
+            if self.library.return_book(title=title, author=author, year=year,genre=genre):
                 messagebox.showinfo("Success", f"Book '{title}' returned successfully!")
             else:
                 messagebox.showerror("Error", f"Failed to return book")

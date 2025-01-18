@@ -28,8 +28,9 @@ notifications.add_users_from_file("users.csv")
 # Notify all users
 test_book = Book("Test Book", "Test Author",  1, "Fiction", 2024,"No")
 library.add_book(test_book)
-library.borrow_book("tututututu", "986259613","mail@mail@mail.com.mail", test_book)
+library.borrow_book("bob", "986259613","mail@mail@mail.com.mail", test_book)
+library.borrow_book("tu", "986259613","mail@mail@mail.com.mail", test_book)
+
 time.sleep(5)
 library.return_book(test_book.title,test_book.genre,test_book.year,test_book.author)
-print("fhnv")
 

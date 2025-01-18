@@ -71,7 +71,6 @@ class Book:
                     self._borrowed_copies_status[key] = "No"
                     return True
             return False
-
         except Exception as e:
             print(f"Error in return_copy: {str(e)}")
             return False

@@ -3,6 +3,8 @@ from typing import List, Dict, TextIO, Union, IO
 from Book import Book
 import os
 
+
+
 class FileManager:
 
     def __init__(self):
@@ -18,7 +20,7 @@ class FileManager:
 
 
     @staticmethod
-    def read_from_csv(path:str) -> List[Book]:
+    def read_from_csv(path:str):
         books= []
         try:
             with open(path,"r",encoding="utf-8") as file:
@@ -26,11 +28,12 @@ class FileManager:
                 next(reader)
                 for row in reader:
                     books.append(Book.from_csv_row(row))
+                return books
         except FileNotFoundError:
             print(f"File {path} not found.")
         except Exception as e:
             print(f"Error reading file {path}: {e}")
-        return books
+        return None
 
     @staticmethod
     def write_to_csv(path:str,books:List[Book]):
@@ -74,6 +77,8 @@ class FileManager:
         # Try to find the book and update it
         for i, book in enumerate(books):
             if book.equals(book_to_update):  # Using equals method to compare
+                print(books[i]," , ", book_to_update)
+                print(books[i].to_csv_row()," , ", book_to_update.to_csv_row())
                 books[i] = book_to_update  # Replace the existing book
                 updated = True
                 break
@@ -95,10 +100,16 @@ class FileManager:
             FileManager.delete_row(paths["available"], book_to_update)
 
             loaned_books = FileManager.read_from_csv(paths["loaned"])
-            if not any(book.equals(book_to_update) for book in loaned_books):
-                FileManager.append_to_csv(paths["loaned"], book_to_update)
+            existing_loaned = next((b for b in loaned_books if b.equals(book_to_update)), None)
+
+            if existing_loaned:
+                #Update existing loaned book
+                loaned_books = [b if not b.equals(book_to_update) else book_to_update for b in loaned_books]
             else:
-                FileManager.write_to_csv(paths["loaned"], [book for book in books if book.is_loaned])
+                # Add new loaned book
+                loaned_books.append(book_to_update)
+
+            FileManager.write_to_csv(paths["loaned"], loaned_books)
         else:
             # Remove from loaned and add to available
             # loaned_books = FileManager.read_from_csv(paths["loaned"])
@@ -107,10 +118,16 @@ class FileManager:
             FileManager.delete_row(paths["loaned"], book_to_update)
 
             available_books = FileManager.read_from_csv(paths["available"])
-            if not any(book.equals(book_to_update) for book in available_books):
-                FileManager.append_to_csv(paths["available"], book_to_update)
+            existing_available = next((b for b in available_books if b.equals(book_to_update)), None)
+
+            if existing_available:
+                # Update existing available book
+                available_books = [b if not b.equals(book_to_update) else book_to_update for b in available_books]
             else:
-                FileManager.write_to_csv(paths["available"], [book for book in books if not book.is_loaned])
+                # Add new available book
+                available_books.append(book_to_update)
+
+            FileManager.write_to_csv(paths["available"], available_books)
 
         if updated:
             print(f"Updated book '{book_to_update.title}' successfully.")
@@ -178,7 +195,7 @@ class FileManager:
                         "genre": book.genre,
                         "is_loaned": "Yes" if book.is_loaned else "No",
                         "borrowed_copies": str(book.borrowed_copies_status()),
-                        "waiting_list": str(book.get_waiting_list()),
+                        "waiting_list": book.get_waiting_list(),
                         "popularity_counter": book.popularity_counter,
                     })
 

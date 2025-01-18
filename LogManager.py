@@ -43,30 +43,23 @@ class LogManager:
             @wraps(func)
             def wrapper(self, *args, **kwargs):
                 log_manager = LogManager()  # Create a LogManager instance
+                query = kwargs.get("query") or (args[1] if len(args) > 1 else None)
+                action_str = action_name(query) if query else action_name()
 
-                try:
-                    result = func(self, *args, **kwargs)
+                result = func(self, *args, **kwargs)
 
-                    # Extract `query` only for search actions
-                    query = kwargs.get("query") or (args[1] if len(args) > 1 else None)
-                    if "Search book" in action_name(""):
-                        action_str = action_name(query)
-                    else:
-                        action_str = action_name()
+                # Handle tuple return types (List[Book], bool)
+                if isinstance(result, tuple) and isinstance(result[1], bool):
+                    success = result[1]
+                else:
+                    success = bool(result)  # For cases where only list is returned
 
+                if success:
                     log_manager.log_success(action_str)
-                    return result
-
-                except Exception as e:
-                    query = kwargs.get("query") or (args[1] if len(args) > 1 else None)
-                    if "Search book" in action_name(""):
-                        action_str = action_name(query)
-                    else:
-                        action_str = action_name()
-
+                else:
                     log_manager.log_fail(action_str)
-                    print(f"Error during action '{action_str}': {e}")
-                    return None
+
+                return result  # ✅ Return the original function output
 
             return wrapper
 

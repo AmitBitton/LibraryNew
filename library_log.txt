@@ -252,3 +252,740 @@
 2025-01-17 15:10:49,537 - INFO - book returned successfully
 2025-01-17 15:44:14,273 - INFO - logged in successfully
 2025-01-17 15:44:22,607 - INFO - book returned successfully
+2025-01-17 15:56:35,722 - INFO - logged in successfully
+2025-01-17 15:57:02,448 - INFO - book borrowed successfully
+2025-01-17 15:57:11,300 - ERROR - book borrowed fail
+2025-01-17 15:59:38,351 - INFO - logged in successfully
+2025-01-17 15:59:52,754 - INFO - book removed successfully
+2025-01-17 16:00:26,527 - INFO - book removed successfully
+2025-01-17 16:03:03,258 - INFO - book added successfully
+2025-01-17 16:03:03,275 - INFO - book borrowed successfully
+2025-01-17 16:03:08,286 - INFO - book removed successfully
+2025-01-17 16:08:08,580 - INFO - logged in successfully
+2025-01-17 16:08:18,003 - INFO - book borrowed successfully
+2025-01-17 16:08:18,015 - INFO - book returned successfully
+2025-01-17 16:08:35,785 - INFO - book removed successfully
+2025-01-17 16:09:29,063 - INFO - book borrowed successfully
+2025-01-17 16:09:29,070 - INFO - book returned successfully
+2025-01-17 16:09:36,824 - INFO - book removed successfully
+2025-01-17 16:12:18,055 - INFO - book added successfully
+2025-01-17 16:12:23,082 - INFO - book removed successfully
+2025-01-17 16:15:08,042 - INFO - logged in successfully
+2025-01-17 16:15:18,092 - INFO - book added successfully
+2025-01-17 16:15:35,227 - INFO - book returned successfully
+2025-01-17 16:15:52,600 - INFO - book removed successfully
+2025-01-17 16:16:17,725 - ERROR - book borrowed fail
+2025-01-17 16:16:24,039 - INFO - book added successfully
+2025-01-17 16:16:31,146 - INFO - book borrowed successfully
+2025-01-17 16:16:38,798 - INFO - book removed successfully
+2025-01-17 16:37:36,172 - INFO - logged in successfully
+2025-01-17 16:37:45,321 - INFO - book added successfully
+2025-01-17 16:38:07,578 - INFO - book borrowed successfully
+2025-01-17 16:38:15,125 - INFO - book removed successfully
+2025-01-17 16:38:40,500 - INFO - book returned successfully
+2025-01-17 16:38:46,058 - ERROR - book returned fail
+2025-01-17 16:39:08,541 - INFO - book removed successfully
+2025-01-17 16:39:52,730 - INFO - book added successfully
+2025-01-17 16:40:04,681 - INFO - book borrowed successfully
+2025-01-17 16:40:16,440 - INFO - book removed successfully
+2025-01-17 16:41:01,980 - INFO - logged in successfully
+2025-01-17 16:41:37,260 - INFO - logged in successfully
+2025-01-17 16:41:44,943 - INFO - Search book 'a' by name completed  successfully
+2025-01-17 16:41:53,281 - INFO - Search book 'a' by name completed  successfully
+2025-01-17 16:41:53,284 - INFO - Search book 'a' by name completed  successfully
+2025-01-17 16:41:53,286 - INFO - Search book 'a' by name completed  successfully
+2025-01-17 17:01:25,383 - INFO - logged in successfully
+2025-01-17 17:01:37,541 - INFO - Search book 's' by name completed  successfully
+2025-01-17 17:01:39,910 - ERROR - Search book 'sd' by name completed  fail
+2025-01-17 17:01:40,930 - ERROR - Search book 'sdf' by name completed  fail
+2025-01-17 17:01:41,369 - ERROR - Search book 'sdfe' by name completed  fail
+2025-01-18 17:47:44,440 - INFO - logged in successfully
+2025-01-18 17:51:08,190 - INFO - logged in successfully
+2025-01-18 17:51:35,119 - INFO - book added successfully
+2025-01-18 17:52:43,239 - INFO - book removed successfully
+2025-01-18 17:53:22,452 - ERROR - book borrowed fail
+2025-01-18 17:53:44,814 - ERROR - book borrowed fail
+2025-01-18 17:53:55,174 - INFO - book borrowed successfully
+2025-01-18 17:53:55,194 - INFO - book returned successfully
+2025-01-18 17:56:36,397 - INFO - book borrowed successfully
+2025-01-18 17:56:36,407 - INFO - book returned successfully
+2025-01-18 18:00:57,912 - INFO - book added successfully
+2025-01-18 18:00:57,969 - INFO - book borrowed successfully
+2025-01-18 18:01:03,017 - INFO - book returned successfully
+2025-01-18 18:01:48,701 - INFO - book added successfully
+2025-01-18 18:01:48,707 - INFO - book borrowed successfully
+2025-01-18 18:01:48,708 - ERROR - book borrowed fail
+2025-01-18 18:01:48,823 - INFO - book added successfully
+2025-01-18 18:01:48,862 - INFO - book borrowed successfully
+2025-01-18 18:01:48,864 - ERROR - book borrowed fail
+2025-01-18 18:01:53,795 - INFO - book borrowed successfully
+2025-01-18 18:01:53,806 - INFO - book returned successfully
+2025-01-18 18:01:53,922 - INFO - book borrowed successfully
+2025-01-18 18:01:53,933 - INFO - book returned successfully
+2025-01-18 18:19:10,833 - INFO - book added successfully
+2025-01-18 18:19:10,874 - INFO - book borrowed successfully
+2025-01-18 18:19:10,876 - ERROR - book borrowed fail
+2025-01-18 18:19:15,962 - INFO - book borrowed successfully
+2025-01-18 18:19:15,974 - INFO - book returned successfully
+2025-01-18 18:23:56,669 - INFO - book added successfully
+2025-01-18 18:23:56,678 - INFO - book borrowed successfully
+2025-01-18 18:23:56,681 - ERROR - book borrowed fail
+2025-01-18 18:24:01,709 - INFO - book borrowed successfully
+2025-01-18 18:24:01,717 - INFO - book returned successfully
+2025-01-18 18:27:13,863 - INFO - book added successfully
+2025-01-18 18:27:13,871 - INFO - book borrowed successfully
+2025-01-18 18:27:13,872 - ERROR - book borrowed fail
+2025-01-18 18:27:18,899 - INFO - book borrowed successfully
+2025-01-18 18:27:18,909 - INFO - book returned successfully
+2025-01-18 18:30:41,354 - INFO - book added successfully
+2025-01-18 18:30:41,360 - INFO - book borrowed successfully
+2025-01-18 18:30:41,361 - ERROR - book borrowed fail
+2025-01-18 18:30:46,393 - INFO - book borrowed successfully
+2025-01-18 18:30:46,403 - INFO - book returned successfully
+2025-01-18 18:32:55,437 - INFO - book added successfully
+2025-01-18 18:32:55,484 - INFO - book borrowed successfully
+2025-01-18 18:32:55,486 - ERROR - book borrowed fail
+2025-01-18 18:33:00,552 - INFO - book borrowed successfully
+2025-01-18 18:33:00,562 - INFO - book returned successfully
+2025-01-18 18:42:10,971 - INFO - logged in successfully
+2025-01-18 18:42:48,070 - INFO - book added successfully
+2025-01-18 18:43:30,563 - INFO - book borrowed successfully
+2025-01-18 18:44:19,858 - ERROR - book borrowed fail
+2025-01-18 18:44:56,669 - ERROR - book returned fail
+2025-01-18 18:45:21,209 - ERROR - book returned fail
+2025-01-18 18:48:06,492 - INFO - logged in successfully
+2025-01-18 18:48:17,864 - INFO - book added successfully
+2025-01-18 18:48:32,606 - ERROR - book returned fail
+2025-01-18 18:48:47,683 - INFO - book borrowed successfully
+2025-01-18 18:49:07,214 - ERROR - book borrowed fail
+2025-01-18 18:49:18,050 - INFO - book borrowed successfully
+2025-01-18 18:49:18,059 - INFO - book returned successfully
+2025-01-18 18:49:54,263 - INFO - book borrowed successfully
+2025-01-18 18:49:54,272 - INFO - book returned successfully
+2025-01-18 18:50:07,269 - INFO - book borrowed successfully
+2025-01-18 18:50:07,279 - INFO - book returned successfully
+2025-01-18 18:50:31,380 - INFO - book borrowed successfully
+2025-01-18 18:50:31,389 - INFO - book returned successfully
+2025-01-18 19:00:37,918 - INFO - logged in successfully
+2025-01-18 19:00:50,682 - INFO - book added successfully
+2025-01-18 19:01:09,092 - INFO - book borrowed successfully
+2025-01-18 19:01:25,094 - ERROR - book borrowed fail
+2025-01-18 19:01:53,905 - INFO - book borrowed successfully
+2025-01-18 19:01:53,915 - INFO - book returned successfully
+2025-01-18 19:02:16,202 - INFO - book borrowed successfully
+2025-01-18 19:02:16,212 - INFO - book returned successfully
+2025-01-18 19:02:26,261 - INFO - book borrowed successfully
+2025-01-18 19:02:26,270 - INFO - book returned successfully
+2025-01-18 19:04:39,454 - INFO - logged in successfully
+2025-01-18 19:04:51,199 - INFO - book added successfully
+2025-01-18 19:05:06,137 - INFO - book borrowed successfully
+2025-01-18 19:05:21,311 - ERROR - book borrowed fail
+2025-01-18 19:05:56,060 - ERROR - book borrowed fail
+2025-01-18 19:05:56,065 - INFO - book returned successfully
+2025-01-18 19:06:50,420 - INFO - logged in successfully
+2025-01-18 19:07:26,140 - ERROR - book returned fail
+2025-01-18 19:07:58,035 - INFO - book returned successfully
+2025-01-18 19:08:31,462 - ERROR - book borrowed fail
+2025-01-18 19:14:01,320 - INFO - book added successfully
+2025-01-18 19:14:01,326 - INFO - book borrowed successfully
+2025-01-18 19:14:01,328 - ERROR - book borrowed fail
+2025-01-18 19:14:06,378 - INFO - book borrowed successfully
+2025-01-18 19:14:06,388 - INFO - book returned successfully
+2025-01-18 19:22:48,677 - INFO - book added successfully
+2025-01-18 19:22:48,685 - INFO - book borrowed successfully
+2025-01-18 19:22:48,687 - ERROR - book borrowed fail
+2025-01-18 19:22:53,735 - INFO - book borrowed successfully
+2025-01-18 19:22:53,740 - INFO - book returned successfully
+2025-01-18 19:25:42,770 - INFO - book added successfully
+2025-01-18 19:25:42,776 - INFO - book borrowed successfully
+2025-01-18 19:25:42,778 - ERROR - book borrowed fail
+2025-01-18 19:25:47,844 - INFO - book borrowed successfully
+2025-01-18 19:25:47,855 - INFO - book returned successfully
+2025-01-18 19:28:51,401 - INFO - book added successfully
+2025-01-18 19:28:51,407 - INFO - book borrowed successfully
+2025-01-18 19:28:51,409 - ERROR - book borrowed fail
+2025-01-18 19:28:56,445 - INFO - book borrowed successfully
+2025-01-18 19:28:56,464 - INFO - book returned successfully
+2025-01-18 19:30:47,082 - INFO - book added successfully
+2025-01-18 19:30:47,090 - INFO - book borrowed successfully
+2025-01-18 19:30:47,092 - ERROR - book borrowed fail
+2025-01-18 19:30:52,128 - INFO - book borrowed successfully
+2025-01-18 19:30:52,138 - INFO - book returned successfully
+2025-01-18 19:35:44,867 - INFO - book added successfully
+2025-01-18 19:35:44,873 - INFO - book borrowed successfully
+2025-01-18 19:35:44,875 - ERROR - book borrowed fail
+2025-01-18 19:35:49,910 - INFO - book borrowed successfully
+2025-01-18 19:35:49,921 - INFO - book returned successfully
+2025-01-18 19:50:45,531 - INFO - book added successfully
+2025-01-18 19:50:45,535 - INFO - book borrowed successfully
+2025-01-18 19:50:45,535 - ERROR - book borrowed fail
+2025-01-18 19:50:50,564 - INFO - book borrowed successfully
+2025-01-18 19:50:50,571 - INFO - book returned successfully
+2025-01-18 19:51:23,944 - INFO - logged in successfully
+2025-01-18 19:52:38,757 - ERROR - book borrowed fail
+2025-01-18 19:53:09,716 - ERROR - book returned fail
+2025-01-18 19:55:01,436 - ERROR - book borrowed fail
+2025-01-18 19:55:34,492 - ERROR - book returned fail
+2025-01-18 19:56:41,251 - INFO - book borrowed successfully
+2025-01-18 19:56:41,259 - INFO - book returned successfully
+2025-01-18 19:59:04,180 - INFO - registered successfully
+2025-01-18 19:59:11,586 - INFO - logged in successfully
+2025-01-18 19:59:53,325 - ERROR - book borrowed fail
+2025-01-18 20:00:40,764 - INFO - book borrowed successfully
+2025-01-18 20:00:40,771 - INFO - book returned successfully
+2025-01-18 20:01:56,458 - ERROR - book returned fail
+2025-01-18 20:26:12,996 - INFO - logged in successfully
+2025-01-18 20:26:51,756 - INFO - logged in successfully
+2025-01-18 20:27:02,532 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:27:02,551 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:27:02,793 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:27:04,855 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:27:05,488 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:27:06,156 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:27:06,175 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:27:06,468 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:27:06,686 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:27:06,859 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:27:07,001 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:27:07,133 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:27:10,103 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:27:11,031 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:28:41,251 - INFO - logged in successfully
+2025-01-18 20:28:46,295 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:28:46,393 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:28:46,536 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:28:46,690 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:28:46,781 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:28:47,450 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:28:47,548 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:28:47,799 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:28:48,666 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:28:48,836 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 20:28:48,960 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:28:49,159 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:30:29,059 - INFO - logged in successfully
+2025-01-18 20:30:34,099 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:30:34,304 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:30:35,342 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:30:35,461 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:30:35,980 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:30:36,327 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:30:36,376 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:30:36,635 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:30:36,863 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:30:37,003 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:30:37,093 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:30:37,254 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:31:31,940 - ERROR - Search book 'The Hobbith' by name completed  fail
+2025-01-18 20:31:33,567 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:31:46,650 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:31:46,745 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:31:59,533 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:31:59,643 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:32:00,014 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:32:00,442 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:32:00,500 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:32:00,744 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:32:00,902 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:32:01,053 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 20:32:01,236 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:32:01,363 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:38:17,910 - INFO - logged in successfully
+2025-01-18 20:38:23,341 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:23,364 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:23,837 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:38:24,148 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:38:25,530 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:38:26,011 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:38:26,032 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:38:26,325 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:38:26,597 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:38:26,742 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 20:38:27,122 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:38:27,345 - INFO - Search book 'The Hobbit' by name completed  successfully
+2025-01-18 20:38:28,106 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:38:29,393 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 20:38:29,610 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:38:29,841 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:38:30,037 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:38:30,252 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:38:30,423 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:38:30,668 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:38:30,845 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:32,620 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:32,705 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:38,766 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:38,783 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:38:38,798 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:43:44,116 - INFO - logged in successfully
+2025-01-18 20:43:48,716 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:43:48,734 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:43:49,059 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:43:49,235 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:49,784 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:50,352 - ERROR - Search book 'The T' by name completed  fail
+2025-01-18 20:43:50,361 - ERROR - Search book 'The T' by name completed  fail
+2025-01-18 20:43:51,085 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:51,816 - INFO - Search book 'The h' by name completed  successfully
+2025-01-18 20:43:52,887 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:54,348 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:54,498 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:43:54,674 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:43:56,041 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:43:56,094 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:43:56,289 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:43:56,443 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:57,587 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:57,599 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:43:57,617 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:48:14,083 - INFO - logged in successfully
+2025-01-18 20:48:22,106 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:48:22,143 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:48:23,250 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:48:30,341 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:48:41,804 - INFO - logged in successfully
+2025-01-18 20:48:46,211 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:48:46,282 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:48:46,566 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:49:18,138 - INFO - logged in successfully
+2025-01-18 20:49:22,956 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:49:22,978 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:49:23,211 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:49:23,383 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:49:23,906 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:49:24,168 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:49:24,219 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:49:24,445 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:49:24,791 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:49:24,980 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 20:49:25,118 - INFO - Search book 'The Hobbi' by name completed  successfully
+2025-01-18 20:49:32,931 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 20:49:33,101 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:49:34,307 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:49:34,326 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:49:34,348 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:53:29,554 - INFO - logged in successfully
+2025-01-18 20:53:35,289 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:53:35,517 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:53:36,563 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:53:36,828 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:53:37,035 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:53:37,974 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:53:38,203 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:53:38,437 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:53:38,524 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 20:53:38,723 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 20:53:41,648 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:53:42,793 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:53:42,829 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:53:42,839 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 20:55:28,565 - ERROR - logged in fail
+2025-01-18 20:55:32,997 - INFO - logged in successfully
+2025-01-18 20:55:41,133 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:55:41,144 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:55:41,423 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:55:41,604 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:56:34,900 - INFO - logged in successfully
+2025-01-18 20:56:40,533 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:56:40,574 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:56:40,838 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:56:41,064 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 20:59:33,861 - INFO - logged in successfully
+2025-01-18 20:59:37,741 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:59:37,866 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:59:49,605 - INFO - logged in successfully
+2025-01-18 20:59:53,397 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:59:53,422 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:59:54,481 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 20:59:54,877 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 20:59:55,148 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:04:12,035 - ERROR - logged in fail
+2025-01-18 21:04:17,736 - INFO - logged in successfully
+2025-01-18 21:04:21,884 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:04:21,955 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:04:22,439 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:04:23,014 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:05:29,325 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:05:29,370 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:05:29,382 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:09:47,815 - INFO - Search book '2' by name completed  successfully
+2025-01-18 21:09:47,889 - ERROR - Search book '20' by name completed  fail
+2025-01-18 21:09:48,042 - ERROR - Search book '200' by name completed  fail
+2025-01-18 21:09:49,729 - ERROR - Search book '2000' by name completed  fail
+2025-01-18 21:10:58,649 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:10:58,706 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:10:58,957 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:10:59,329 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:14:11,046 - INFO - logged in successfully
+2025-01-18 21:17:57,123 - INFO - logged in successfully
+2025-01-18 21:19:17,027 - INFO - logged in successfully
+2025-01-18 21:20:00,428 - INFO - logged in successfully
+2025-01-18 21:20:27,464 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:20:27,543 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:20:28,547 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:20:29,493 - INFO - Search book 'J.R' by author name completed  successfully
+2025-01-18 21:20:29,523 - INFO - Search book 'J.R' by author name completed  successfully
+2025-01-18 21:20:30,005 - INFO - Search book 'J.R.' by author name completed  successfully
+2025-01-18 21:20:30,749 - INFO - Search book 'J.R' by author name completed  successfully
+2025-01-18 21:20:30,908 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:20:31,064 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:20:32,112 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:20:32,157 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:20:32,449 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:20:32,831 - INFO - Search book 'J.K' by author name completed  successfully
+2025-01-18 21:20:32,887 - INFO - Search book 'J.K' by author name completed  successfully
+2025-01-18 21:20:33,980 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:20:34,126 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:21:13,284 - INFO - logged in successfully
+2025-01-18 21:21:18,271 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:21:18,284 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:21:18,605 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:21:18,816 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:21:19,626 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:21:19,900 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 21:21:19,965 - INFO - Search book 'The H' by name completed  successfully
+2025-01-18 21:21:20,156 - INFO - Search book 'The Ho' by name completed  successfully
+2025-01-18 21:21:20,360 - INFO - Search book 'The Hob' by name completed  successfully
+2025-01-18 21:21:20,522 - INFO - Search book 'The Hobb' by name completed  successfully
+2025-01-18 21:21:52,153 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:21:52,166 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:21:52,478 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:21:53,197 - INFO - Search book 'J.r' by author name completed  successfully
+2025-01-18 21:21:53,752 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:21:54,540 - INFO - Search book 'J.R' by author name completed  successfully
+2025-01-18 21:21:54,594 - INFO - Search book 'J.R' by author name completed  successfully
+2025-01-18 21:21:55,095 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:21:55,272 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:21:56,467 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:21:56,480 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:21:56,877 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:21:57,166 - INFO - Search book 'J.r' by author name completed  successfully
+2025-01-18 21:21:57,953 - ERROR - Search book 'J.rr' by author name completed  fail
+2025-01-18 21:21:58,385 - INFO - Search book 'J.r' by author name completed  successfully
+2025-01-18 21:21:58,626 - INFO - Search book 'J.r.' by author name completed  successfully
+2025-01-18 21:21:58,838 - INFO - Search book 'J.r.r' by author name completed  successfully
+2025-01-18 21:25:23,094 - INFO - logged in successfully
+2025-01-18 21:25:28,111 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:25:28,190 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:25:28,402 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:27:48,462 - INFO - logged in successfully
+2025-01-18 21:27:52,307 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:27:52,356 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:27:52,506 - INFO - Search book 'thr' by name completed  successfully
+2025-01-18 21:27:53,213 - ERROR - Search book 'thr\' by name completed  fail
+2025-01-18 21:27:53,442 - ERROR - Search book 'thr\e' by name completed  fail
+2025-01-18 21:27:53,561 - ERROR - Search book 'thr\' by name completed  fail
+2025-01-18 21:27:53,705 - INFO - Search book 'thr' by name completed  successfully
+2025-01-18 21:27:53,846 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:27:54,004 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:36:44,852 - INFO - logged in successfully
+2025-01-18 21:36:48,696 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:36:48,710 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:39:15,419 - INFO - logged in successfully
+2025-01-18 21:39:19,036 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:39:19,050 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:39:20,254 - ERROR - Search book 'Tg' by name completed  fail
+2025-01-18 21:39:21,101 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:39:22,055 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:39:22,551 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:39:22,828 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:39:24,096 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:39:24,291 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:39:54,896 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:40:15,343 - INFO - logged in successfully
+2025-01-18 21:40:18,567 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:40:19,869 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:40:20,887 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:41:04,158 - INFO - logged in successfully
+2025-01-18 21:41:07,239 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:41:08,102 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:41:08,294 - INFO - Search book 'thr' by name completed  successfully
+2025-01-18 21:41:14,488 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:41:15,234 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:42:09,615 - INFO - logged in successfully
+2025-01-18 21:42:13,364 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:42:14,163 - ERROR - Search book 'tg' by name completed  fail
+2025-01-18 21:42:15,214 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:42:15,444 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:42:16,557 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:42:21,689 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:42:21,746 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:42:22,172 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:42:22,370 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:42:25,885 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:42:26,083 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:42:27,801 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:42:29,757 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:42:34,545 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:43:23,767 - INFO - logged in successfully
+2025-01-18 21:43:29,237 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:43:29,923 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:43:30,937 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:43:33,813 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:43:34,044 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:43:35,133 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:44:45,253 - INFO - logged in successfully
+2025-01-18 21:44:50,886 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:44:51,499 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:44:51,809 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:44:52,832 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:44:52,985 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:44:53,685 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:44:53,746 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:44:53,958 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:44:54,103 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:44:54,882 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:44:55,041 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:44:55,807 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:44:56,090 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:44:56,590 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:44:57,113 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:44:57,285 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:44:58,186 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:44:58,273 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:44:59,057 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:44:59,754 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:45:06,095 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:45:06,970 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:47:18,241 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:47:20,802 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:47:21,119 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:47:21,780 - INFO - Search book 'The c' by name completed  successfully
+2025-01-18 21:47:23,379 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:49:07,985 - INFO - logged in successfully
+2025-01-18 21:49:11,748 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:49:12,635 - ERROR - Search book 'tg' by name completed  fail
+2025-01-18 21:49:13,598 - ERROR - Search book 'tg\' by name completed  fail
+2025-01-18 21:49:14,036 - ERROR - Search book 'tg' by name completed  fail
+2025-01-18 21:49:14,417 - ERROR - Search book 'tgh' by name completed  fail
+2025-01-18 21:49:14,665 - ERROR - Search book 'tg' by name completed  fail
+2025-01-18 21:49:14,855 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:49:15,018 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:49:16,350 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:49:16,935 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:49:17,104 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:49:17,723 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:49:17,738 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:49:18,010 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:49:18,142 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:49:19,401 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:49:19,594 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:49:20,363 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:49:20,407 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:49:20,633 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:49:24,420 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:49:24,605 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:49:26,102 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:49:26,117 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:49:28,152 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:49:28,285 - INFO - Search book 'The' by name completed  successfully
+2025-01-18 21:49:28,825 - INFO - Search book 'Th' by name completed  successfully
+2025-01-18 21:49:29,050 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:49:36,193 - INFO - Search book 'T' by name completed  successfully
+2025-01-18 21:51:15,669 - INFO - logged in successfully
+2025-01-18 21:51:23,754 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:51:23,819 - INFO - Search book 'J' by author name completed  successfully
+2025-01-18 21:51:25,650 - INFO - Search book 'J.' by author name completed  successfully
+2025-01-18 21:51:26,782 - INFO - Search book 'J.r' by author name completed  successfully
+2025-01-18 21:51:27,949 - INFO - Search book 'J.r.' by author name completed  successfully
+2025-01-18 21:51:28,160 - INFO - Search book 'J.r.r' by author name completed  successfully
+2025-01-18 21:52:35,869 - INFO - logged in successfully
+2025-01-18 21:52:39,635 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:52:39,721 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:52:39,920 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:52:42,431 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:52:43,631 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:52:44,250 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:52:44,946 - INFO - Search book 'the c' by name completed  successfully
+2025-01-18 21:52:45,880 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:52:46,072 - INFO - Search book 'the' by name completed  successfully
+2025-01-18 21:52:46,239 - INFO - Search book 'th' by name completed  successfully
+2025-01-18 21:52:46,415 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:52:47,820 - INFO - Search book 't' by name completed  successfully
+2025-01-18 21:52:48,219 - INFO - Search book 'tH' by name completed  successfully
+2025-01-18 21:52:48,307 - INFO - Search book 'tH' by name completed  successfully
+2025-01-18 21:52:48,785 - INFO - Search book 'tHe' by name completed  successfully
+2025-01-18 21:52:50,937 - INFO - Search book 'tHe' by name completed  successfully
+2025-01-18 21:52:51,284 - INFO - Search book 'tHe C' by name completed  successfully
+2025-01-18 21:52:51,332 - INFO - Search book 'tHe C' by name completed  successfully
+2025-01-18 21:52:52,021 - INFO - Search book 'tHe Ca' by name completed  successfully
+2025-01-18 21:52:52,328 - INFO - Search book 'tHe CaT' by name completed  successfully
+2025-01-18 21:52:52,348 - INFO - Search book 'tHe CaT' by name completed  successfully
+2025-01-18 21:52:53,177 - INFO - Search book 'tHe CaTC' by name completed  successfully
+2025-01-18 21:52:53,237 - INFO - Search book 'tHe CaTC' by name completed  successfully
+2025-01-18 21:52:53,754 - ERROR - Search book 'tHe CaTCg' by name completed  fail
+2025-01-18 21:52:54,266 - INFO - Search book 'tHe CaTC' by name completed  successfully
+2025-01-18 21:52:54,542 - INFO - Search book 'tHe CaTCh' by name completed  successfully
+2025-01-18 21:52:54,723 - INFO - Search book 'tHe CaTChe' by name completed  successfully
+2025-01-18 21:52:55,088 - INFO - Search book 'tHe CaTCher' by name completed  successfully
+2025-01-18 21:53:44,404 - INFO - log out successfully
+2025-01-18 22:36:18,857 - INFO - logged in successfully
+2025-01-18 22:36:55,586 - INFO - logged in successfully
+2025-01-18 22:39:02,793 - INFO - logged in successfully
+2025-01-18 22:39:51,016 - INFO - logged in successfully
+2025-01-18 22:40:24,712 - INFO - logged in successfully
+2025-01-18 22:41:17,998 - INFO - logged in successfully
+2025-01-18 22:41:41,224 - INFO - logged in successfully
+2025-01-18 22:42:10,588 - INFO - logged in successfully
+2025-01-18 22:44:16,019 - INFO - logged in successfully
+2025-01-18 22:45:37,350 - INFO - logged in successfully
+2025-01-18 22:46:54,263 - INFO - logged in successfully
+2025-01-18 22:49:46,627 - INFO - logged in successfully
+2025-01-18 22:52:05,033 - INFO - logged in successfully
+2025-01-18 22:55:33,369 - INFO - logged in successfully
+2025-01-18 22:58:05,801 - INFO - logged in successfully
+2025-01-18 22:58:35,832 - INFO - logged in successfully
+2025-01-18 22:59:53,383 - INFO - logged in successfully
+2025-01-18 23:01:39,607 - INFO - logged in successfully
+2025-01-18 23:04:18,833 - INFO - logged in successfully
+2025-01-18 23:04:59,425 - INFO - logged in successfully
+2025-01-18 23:05:18,699 - INFO - logged in successfully
+2025-01-18 23:06:12,711 - INFO - logged in successfully
+2025-01-18 23:12:22,538 - INFO - logged in successfully
+2025-01-18 23:15:45,116 - INFO - logged in successfully
+2025-01-18 23:16:42,454 - ERROR - Search book 'nh' by name completed  fail
+2025-01-18 23:16:42,676 - ERROR - Search book 'nh' by name completed  fail
+2025-01-18 23:16:43,817 - INFO - Search book 'n' by name completed  successfully
+2025-01-18 23:16:44,607 - INFO - Search book 't' by name completed  successfully
+2025-01-18 23:16:46,000 - INFO - Search book 'p' by name completed  successfully
+2025-01-18 23:16:53,714 - INFO - Search book 'j' by author name completed  successfully
+2025-01-18 23:16:53,785 - ERROR - Search book 'jh' by author name completed  fail
+2025-01-18 23:16:53,971 - ERROR - Search book 'jhgy' by author name completed  fail
+2025-01-18 23:16:53,986 - ERROR - Search book 'jhgy' by author name completed  fail
+2025-01-18 23:16:54,048 - ERROR - Search book 'jhgyh' by author name completed  fail
+2025-01-18 23:16:54,791 - ERROR - Search book 'jhgy' by author name completed  fail
+2025-01-18 23:16:54,936 - ERROR - Search book 'jhg' by author name completed  fail
+2025-01-18 23:16:55,087 - ERROR - Search book 'jh' by author name completed  fail
+2025-01-18 23:16:55,374 - INFO - Search book 'j' by author name completed  successfully
+2025-01-18 23:16:57,828 - INFO - log out successfully
+2025-01-18 23:23:02,806 - INFO - logged in successfully
+2025-01-18 23:24:37,386 - INFO - logged in successfully
+2025-01-18 23:33:50,504 - INFO - logged in successfully
+2025-01-18 23:34:05,530 - INFO - book added successfully
+2025-01-18 23:35:13,412 - INFO - logged in successfully
+2025-01-18 23:35:25,402 - INFO - book borrowed successfully
+2025-01-18 23:35:44,110 - ERROR - book borrowed fail
+2025-01-18 23:35:55,096 - INFO - book borrowed successfully
+2025-01-18 23:35:55,101 - INFO - book returned successfully
+2025-01-18 23:36:19,543 - INFO - book returned successfully
+2025-01-18 23:36:35,565 - ERROR - book returned fail
+2025-01-19 00:14:07,143 - ERROR - book added fail
+2025-01-19 00:14:07,193 - ERROR - book added fail
+2025-01-19 00:14:07,196 - ERROR - book borrowed fail
+2025-01-19 00:14:07,201 - INFO - book borrowed successfully
+2025-01-19 00:14:07,203 - ERROR - book borrowed fail
+2025-01-19 00:14:07,205 - ERROR - book removed fail
+2025-01-19 00:14:07,207 - ERROR - book removed fail
+2025-01-19 00:14:07,209 - ERROR - book returned fail
+2025-01-19 00:14:07,211 - INFO - book returned successfully
+2025-01-19 00:14:07,213 - ERROR - book returned fail
+2025-01-19 00:16:54,778 - INFO - book added successfully
+2025-01-19 00:16:54,786 - INFO - book added successfully
+2025-01-19 00:16:54,790 - ERROR - book borrowed fail
+2025-01-19 00:16:54,794 - INFO - book borrowed successfully
+2025-01-19 00:16:54,797 - ERROR - book borrowed fail
+2025-01-19 00:16:54,798 - ERROR - book removed fail
+2025-01-19 00:16:54,800 - ERROR - book removed fail
+2025-01-19 00:16:54,803 - ERROR - book returned fail
+2025-01-19 00:16:54,806 - INFO - book returned successfully
+2025-01-19 00:16:54,808 - ERROR - book returned fail
+2025-01-19 00:29:07,471 - INFO - book added successfully
+2025-01-19 00:29:07,476 - INFO - book added successfully
+2025-01-19 00:29:07,480 - ERROR - book borrowed fail
+2025-01-19 00:29:07,483 - INFO - book borrowed successfully
+2025-01-19 00:29:07,484 - ERROR - book borrowed fail
+2025-01-19 00:29:07,485 - ERROR - book removed fail
+2025-01-19 00:29:07,488 - ERROR - book removed fail
+2025-01-19 00:29:07,489 - ERROR - book returned fail
+2025-01-19 00:29:07,491 - INFO - book returned successfully
+2025-01-19 00:29:07,492 - ERROR - book returned fail
+2025-01-19 00:31:39,564 - INFO - book added successfully
+2025-01-19 00:31:39,569 - INFO - book added successfully
+2025-01-19 00:31:39,573 - ERROR - book borrowed fail
+2025-01-19 00:31:39,576 - INFO - book borrowed successfully
+2025-01-19 00:31:39,579 - ERROR - book borrowed fail
+2025-01-19 00:31:39,580 - ERROR - book removed fail
+2025-01-19 00:31:39,583 - ERROR - book removed fail
+2025-01-19 00:31:39,584 - ERROR - book returned fail
+2025-01-19 00:31:39,586 - INFO - book returned successfully
+2025-01-19 00:31:39,587 - ERROR - book returned fail
+2025-01-19 00:32:33,202 - ERROR - book removed fail
+2025-01-19 00:32:39,088 - ERROR - book removed fail
+2025-01-19 00:37:40,388 - INFO - book added successfully
+2025-01-19 00:37:40,393 - INFO - book added successfully
+2025-01-19 00:37:40,396 - ERROR - book borrowed fail
+2025-01-19 00:37:40,398 - INFO - book borrowed successfully
+2025-01-19 00:37:40,399 - ERROR - book borrowed fail
+2025-01-19 00:37:40,401 - ERROR - book removed fail
+2025-01-19 00:37:40,404 - ERROR - book removed fail
+2025-01-19 00:37:40,406 - ERROR - book returned fail
+2025-01-19 00:37:40,407 - INFO - book returned successfully
+2025-01-19 00:37:40,408 - ERROR - book returned fail
+2025-01-19 00:39:59,901 - INFO - book added successfully
+2025-01-19 00:39:59,906 - INFO - book added successfully
+2025-01-19 00:39:59,909 - ERROR - book borrowed fail
+2025-01-19 00:39:59,910 - INFO - book borrowed successfully
+2025-01-19 00:39:59,912 - ERROR - book borrowed fail
+2025-01-19 00:39:59,914 - ERROR - book removed fail
+2025-01-19 00:39:59,917 - ERROR - book removed fail
+2025-01-19 00:39:59,918 - ERROR - book returned fail
+2025-01-19 00:39:59,922 - INFO - book returned successfully
+2025-01-19 00:39:59,923 - ERROR - book returned fail
+2025-01-19 00:42:55,031 - INFO - book added successfully
+2025-01-19 00:42:55,037 - INFO - book added successfully
+2025-01-19 00:42:55,042 - ERROR - book borrowed fail
+2025-01-19 00:42:55,046 - INFO - book borrowed successfully
+2025-01-19 00:42:55,048 - ERROR - book borrowed fail
+2025-01-19 00:42:55,051 - ERROR - book removed fail
+2025-01-19 00:42:55,057 - ERROR - book removed fail
+2025-01-19 00:42:55,058 - ERROR - book returned fail
+2025-01-19 00:42:55,060 - INFO - book returned successfully
+2025-01-19 00:42:55,062 - ERROR - book returned fail
+2025-01-19 00:44:57,562 - ERROR - book removed fail
+2025-01-19 00:46:55,341 - INFO - book added successfully
+2025-01-19 00:46:55,346 - INFO - book added successfully
+2025-01-19 00:46:55,349 - ERROR - book borrowed fail
+2025-01-19 00:46:55,351 - INFO - book borrowed successfully
+2025-01-19 00:46:55,352 - ERROR - book borrowed fail
+2025-01-19 00:46:55,355 - ERROR - book removed fail
+2025-01-19 00:46:55,360 - ERROR - book removed fail
+2025-01-19 00:46:55,362 - ERROR - book returned fail
+2025-01-19 00:46:55,364 - INFO - book returned successfully
+2025-01-19 00:46:55,365 - ERROR - book returned fail
+2025-01-19 00:49:40,454 - INFO - book added successfully
+2025-01-19 00:50:59,154 - INFO - book added successfully
+2025-01-19 00:52:20,575 - INFO - book added successfully
+2025-01-19 00:59:14,995 - INFO - book added successfully
+2025-01-19 00:59:24,616 - INFO - book added successfully
+2025-01-19 00:59:24,621 - INFO - book added successfully
+2025-01-19 00:59:24,622 - ERROR - book borrowed fail
+2025-01-19 00:59:24,624 - INFO - book borrowed successfully
+2025-01-19 00:59:24,626 - ERROR - book borrowed fail
+2025-01-19 00:59:24,628 - ERROR - book removed fail
+2025-01-19 00:59:24,630 - ERROR - book removed fail
+2025-01-19 00:59:24,632 - ERROR - book returned fail
+2025-01-19 00:59:24,633 - INFO - book returned successfully
+2025-01-19 00:59:24,635 - ERROR - book returned fail
+2025-01-19 01:01:37,606 - INFO - book added successfully
+2025-01-19 01:03:02,752 - ERROR - book removed fail
+2025-01-19 01:04:02,055 - INFO - book added successfully
+2025-01-19 01:04:49,206 - INFO - book added successfully
+2025-01-19 01:05:03,398 - INFO - book added successfully
+2025-01-19 01:05:40,549 - ERROR - book removed fail
+2025-01-19 01:05:49,442 - ERROR - book removed fail
+2025-01-19 01:06:01,308 - INFO - book added successfully
+2025-01-19 01:06:08,383 - ERROR - book returned fail
+2025-01-19 01:06:14,158 - ERROR - book returned fail
+2025-01-19 01:06:26,315 - INFO - book returned successfully
+2025-01-19 01:06:38,313 - ERROR - book borrowed fail
+2025-01-19 01:06:45,100 - ERROR - book borrowed fail
+2025-01-19 01:06:53,341 - INFO - book borrowed successfully
+2025-01-19 01:07:53,907 - ERROR - book removed fail
+2025-01-19 01:09:41,066 - INFO - book added successfully
+2025-01-19 01:09:41,067 - ERROR - book removed fail
+2025-01-19 01:11:44,233 - INFO - book added successfully
+2025-01-19 01:11:44,234 - ERROR - book removed fail
+2025-01-19 01:13:50,645 - INFO - book added successfully
+2025-01-19 01:13:50,646 - ERROR - book removed fail
+2025-01-19 01:15:01,504 - INFO - book added successfully
+2025-01-19 01:15:01,505 - ERROR - book removed fail
