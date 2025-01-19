@@ -44,8 +44,37 @@ The search support Partial searches.
 ### File Management & Persistence
 + All book and user data is stored in CSV files for easy access and tracking.
 + Implements functions for reading, writing, updating, and deleting book records.
+  
+Files Used in the System:
++ books.csv
+
+Stores the entire book collection in the library.
+
++ available_books.csv
+
+Stores only books that have available copies (not fully borrowed).
+
++ loaned_books.csv
+
+Stores books that are currently loaned out to users.
+
++ books_update.csv
+
+Includes title, author, year, copies, genre, is_loaned, popularity_counter, waiting_list, and borrowed_copies.
+This file is used to track all book data comprehensively and ensure accuracy.
+
+### Design Patterns Used
+This project follows several design patterns to improve maintainability:
++ Observer Pattern → Notifies librarians about updates (Observer, Subject, Notifications).
++ Strategy Pattern → Allows different search methods (SearchStrategy).
++ Decorator Pattern → Automates logging of actions (LogManager).
++ Iterator Pattern → Implements iteration over search results with the BaseBookIterator in BookCollection (BookIterator in BookCollection) 
++ Singlton Pattern → Ensures only one instance of the Library is created.
 
 
+
+
+# Wrotten by Amit Bitton and Lihi Cohen
 
 
 
