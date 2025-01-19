@@ -34,13 +34,8 @@ class BookCollection:
         self._books.append(new_book)
 
     def remove_book(self, book: Book):
-        print(f"\n🛠 DEBUG: Attempting to remove {book.title} by {book.author}")
         for existing_book in self._books:
-            print(
-                f"🔍 Checking existing book: {existing_book.title} | {existing_book.author} | Copies: {existing_book.copies}")
-
             if existing_book.equals(book):
-                print(f"✅ Match Found! Removing book: {existing_book.title}")
 
                 unborrowed_keys = [key for key, status in existing_book.borrowed_copies_status().items() if status == "No"]
                 for key in unborrowed_keys:
@@ -49,15 +44,13 @@ class BookCollection:
                    # if book.borrowed_copies_status()[i] =="No":
                        # book.borrowed_copies_status().pop(i)
                 book.update_copies(len(book.borrowed_copies_status()))
-                print(f"📉 Updated copies: {book.copies}")
-
                 if book.copies == 0:
-                    print(f"🚮 Removing book: {book.title} from collection")
+                    print(f"Removing book: {book.title} from collection")
 
                     self._books.remove(book)
                     return True
                 return False
-        print(f"❌ ERROR: Book '{book.title}' not found in collection.")
+        print(f"ERROR: Book '{book.title}' not found in collection.")
 
         raise BookNotFoundError(f"Can not remove the book:'{book.title}' by {book.author} not found in the collection.")
 

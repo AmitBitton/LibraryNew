@@ -33,7 +33,7 @@ class FileManager:
             print(f"File {path} not found.")
         except Exception as e:
             print(f"Error reading file {path}: {e}")
-        return None
+        return []
 
     @staticmethod
     def write_to_csv(path:str,books:List[Book]):

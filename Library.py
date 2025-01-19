@@ -109,6 +109,9 @@ class Library:
 
     @LogManager.log_action( lambda *args, **kwargs:"book added")
     def add_book(self, book: Book):
+        if book.copies <= 0:  # Prevent adding books with zero copies
+            print(f"Error: Cannot add book '{book.title}' with zero or negative copies.")
+            return False
         try:
             for existing_book in BookCollection.books(self._collection):
                 if book.equals(existing_book):
@@ -135,16 +138,7 @@ class Library:
     def remove_book(self,book:Book):
         try:
             for existing_book in BookCollection.books(self._collection):
-                print(f"Checking: {existing_book.title} by {existing_book.author} | Copies: {existing_book.copies}")
-                # DEBUGGING COMPARISON
-                print(f"Comparing: '{book.title}' == '{existing_book.title}' -> {book.title == existing_book.title}")
-                print(
-                    f"Comparing: '{book.author}' == '{existing_book.author}' -> {book.author == existing_book.author}")
-                print(f"Comparing: '{book.genre}' == '{existing_book.genre}' -> {book.genre == existing_book.genre}")
-                print(f"Comparing: '{book.year}' == '{existing_book.year}' -> {book.year == existing_book.year}")
                 if book.equals(existing_book):
-                    print(f"✅ Match Found! Attempting to remove {existing_book.title}")
-
                     if BookCollection.remove_book(self._collection,existing_book):
                         print(f"The book '{book.title}' has been successfully removed from the library.")
                         self.notification_manager.notify_observers(f"The book '{book.title}' has been successfully removed from the library.")

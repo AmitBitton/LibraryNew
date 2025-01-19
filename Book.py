@@ -83,7 +83,7 @@ class Book:
         return Book(
             title=row[0],
             author=row[1],
-            is_loaned=row[2],
+            is_loaned=row[2] ,
             copies=int(row[3]),
             genre=row[4],
             year=int(row[5])

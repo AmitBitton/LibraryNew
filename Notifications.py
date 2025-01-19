@@ -21,11 +21,11 @@ class Notifications:
                         # Create a LibraryUsers object for each user
                         librarian = LibraryUsers(row["username"])
                         self._observers.append(librarian)
-                        print(f"✅ Added librarian: {row['username']}")  # Debugging line
+                        print(f"Added librarian: {row['username']}")  # Debugging line
                     else:
-                        print(f"⚠️ Skipping row due to missing 'username': {row}")  # Debugging
+                        print(f"Skipping row due to missing 'username': {row}")  # Debugging
 
-            print(f"📋 Final observer count: {len(self._observers)}")  # Debugging
+            print(f"Final observer count: {len(self._observers)}")  # Debugging
            # print(f"All users loaded and added as observers from {users_file}.")
         except FileNotFoundError:
             print(f"Error: The file {users_file} was not found.")
@@ -42,13 +42,13 @@ class Notifications:
 
     def notify_observers(self, notification: str):
         self._notifications.append(notification)
-        print(f"📢 Notifying observers: {len(self._observers)} total.")  # Debugging
+        print(f"Notifying observers: {len(self._observers)} total.")  # Debugging
         if not self._observers:
-            print("⚠️ Warning: No observers registered!")
+            print("Warning: No observers registered!")
 
         for observer in self._observers:
             observer.update(notification)
-            print(f"✅ Sent to: {observer.username}")  # Debugging
+            print(f"Sent to: {observer.username}")  # Debugging
 
     def get_user_notifications(self, username):
         """Return notifications for a specific user"""

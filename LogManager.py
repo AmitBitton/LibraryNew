@@ -59,7 +59,7 @@ class LogManager:
                 else:
                     log_manager.log_fail(action_str)
 
-                return result  # ✅ Return the original function output
+                return result
 
             return wrapper
 

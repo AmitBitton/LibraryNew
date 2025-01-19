@@ -10,6 +10,5 @@ class LibraryUsers(Observer) :
         self.notifications = []
 
     def update(self, notification):
-        self.notifications.append(notification)  # ✅ Store it for later retrieval
-
+        self.notifications.append(notification)
         print(f"New notification for Librarian {self.username} : {notification}")
