@@ -45,7 +45,7 @@ The search support Partial searches.
 + All book and user data is stored in CSV files for easy access and tracking.
 + Implements functions for reading, writing, updating, and deleting book records.
   
- Files Used in the System:
+  Files Used in the System:
 + **books.csv:**
   
   Stores the entire book collection in the library.
