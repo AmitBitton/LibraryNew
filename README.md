@@ -71,7 +71,7 @@ This project follows several design patterns to improve maintainability:
 + **Iterator Pattern** → Implements iteration over search results with the BaseBookIterator in BookCollection (BookIterator in BookCollection) 
 + **Singlton Pattern** → Ensures only one instance of the Library is created.
 
-## Project Structure - Key Classes
+## Project Structure - Classes
 📚 Book Management
 
 Book - Represents a book with metadata.
