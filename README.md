@@ -76,16 +76,20 @@ This project follows several design patterns to improve maintainability:
 
 Book - Represents a book with metadata.
 BookCollection - Manages a collection of books.
+
 🗄 File Handling
 
 FileManager - Reads, writes, and updates CSV files.
+
 🏢 Library System
 
 Library - Handles book borrowing and returning.
+
 👥 User Management
 
 User - Defines user authentication.
 UserManager - Manages user accounts.
+
 🔍 Search System
 
 SearchStrategy - Implements search methods.
@@ -93,11 +97,13 @@ SearchByTitle - Searches by book title.
 SearchByAuthor - Searches by author.
 SearchByGenre - Searches by genre.
 SearchByYear - Searches by publication year.
+
 🔔 Logging & Notifications
 
 LogManager - Logs system actions.
 Observer - Defines notification receivers.
 Subject - Manages and notifies observers.
+
 🎨 Graphical Interface
 
 GUI - Provides a Tkinter-based UI.
