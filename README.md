@@ -74,7 +74,7 @@ This project follows several design patterns to improve maintainability:
 
 
 
-# Wrotten by Amit Bitton and Lihi Cohen
+## Wrotten by Amit Bitton and Lihi Cohen
 
 
 
