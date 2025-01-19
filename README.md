@@ -46,22 +46,22 @@ The search support Partial searches.
 + Implements functions for reading, writing, updating, and deleting book records.
   
 Files Used in the System:
-+ books.csv
++ books.csv:
+  
+  Stores the entire book collection in the library.
 
-Stores the entire book collection in the library.
++ available_books.csv:
 
-+ available_books.csv
+  Stores only books that have available copies (not fully borrowed).
 
-Stores only books that have available copies (not fully borrowed).
++ loaned_books.csv:
 
-+ loaned_books.csv
+  Stores books that are currently loaned out to users.
 
-Stores books that are currently loaned out to users.
++ books_update.csv:
 
-+ books_update.csv
-
-Includes title, author, year, copies, genre, is_loaned, popularity_counter, waiting_list, and borrowed_copies.
-This file is used to track all book data comprehensively and ensure accuracy.
+  Includes title, author, year, copies, genre, is_loaned, popularity_counter, waiting_list, and borrowed_copies.
+  This file is used to track all book data comprehensively and ensure accuracy.
 
 ### Design Patterns Used
 This project follows several design patterns to improve maintainability:
