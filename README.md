@@ -22,8 +22,9 @@ Books can be searched using different criteria:
 + By Author
 + By Genre
 + By Year
+  
 Implements the Strategy Design Pattern, allowing flexible search functionality.
-+ The search support Partial searches.
+The search support Partial searches.
 
 ### User Authentication & Management
 + Users can register, login, and authenticate with secure password hashing.
